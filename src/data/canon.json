@@ -274,52 +274,6 @@
       "is_index": false
     },
     {
-      "path": "07_Code/website/Deployment Guide.md",
-      "title": "🚀 Deployment Guide",
-      "subtitle": "Prerequisites",
-      "section": "07_Code",
-      "size_bytes": 3688,
-      "modified": "2026-06-07T20:39:25.000Z",
-      "word_count": 549,
-      "excerpt": "The site is currently local only. To deploy: cd workspace/ElegantAutomata/dev/elegant-automata-site git commit -m \"Initial commit: Elegant Automata landing page\" Create a GitHub repo (e.g., `elegant-a",
-      "tags": [
-        "#github-actions-fallback"
-      ],
-      "is_index": false
-    },
-    {
-      "path": "07_Code/website/Vault Extraction Pipeline.md",
-      "title": "⛏️ Vault Extraction Pipeline",
-      "subtitle": "What It Does",
-      "section": "07_Code",
-      "size_bytes": 3744,
-      "modified": "2026-06-07T20:38:58.000Z",
-      "word_count": 548,
-      "excerpt": "Reads the Obsidian vault's `Project Idea Tracker.md` and generates a structured JSON file (`src/data/projects.json`) that the Astro landing page imports at build time. 00_META/Project Idea Tracker.md",
-      "tags": [
-        "#anchor"
-      ],
-      "is_index": false
-    },
-    {
-      "path": "07_Code/website/Website.md",
-      "title": "🌐 Elegant Automata Website",
-      "subtitle": "Overview",
-      "section": "07_Code",
-      "size_bytes": 5815,
-      "modified": "2026-06-07T20:38:20.000Z",
-      "word_count": 710,
-      "excerpt": "Single-page landing site for the Elegant Automata project. Introduces the vision, core components, composer DNA engines, and active project tracker — all styled in the Terminal Chic aesthetic (dark CR",
-      "tags": [
-        "#0a0a0a",
-        "#1a1a2e",
-        "#58a6ff",
-        "#3fb950",
-        "#c9d1d9"
-      ],
-      "is_index": false
-    },
-    {
       "path": "Elegant Automata.md",
       "title": "🎛️ Elegant Automata",
       "subtitle": "☰ Navigation",
@@ -343,8 +297,8 @@
       "is_index": false
     }
   ],
-  "total_files": 27,
-  "total_words": 29884,
+  "total_files": 24,
+  "total_words": 28077,
   "sections": [
     "00_META",
     "01_DSP_&_Audio_Physics",
@@ -352,10 +306,9 @@
     "04_Classical_&_Composer_Studies",
     "05_Jazz_&_Fusion",
     "06_Guitar_Solos_&_Xenochrony",
-    "07_Code",
     "Elegant Automata.md",
     "Structure.md"
   ],
-  "extracted_at": "2026-06-07T23:52:28.255Z",
+  "extracted_at": "2026-06-07T23:57:29.227Z",
   "vault_path": "/Users/gregevans/workspace/ElegantAutomata/obsidian-vault"
 }

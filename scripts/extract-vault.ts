@@ -224,7 +224,7 @@ function extractExcerpt(lines: string[], title: string, subtitle?: string): stri
 /** Recursively scan the vault for all .md files */
 function scanVault(root: string): CanonFile[] {
   const files: CanonFile[] = [];
-  const ignoreDirs = new Set(['.obsidian', '.git', 'node_modules']);
+  const ignoreDirs = new Set(['.obsidian', '.git', 'node_modules', '07_Code']);
 
   function walk(dir: string) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
