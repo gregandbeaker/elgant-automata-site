@@ -1,0 +1,168 @@
+{
+  "date": "2026-06-07",
+  "files": [
+    {
+      "path": "00_META/Logic Path A Project.md",
+      "title": "🚀 EXP-04: Logic Pro IAC Bridge — EA Control Layer",
+      "size_bytes": 9939,
+      "modified": "2026-06-07T19:06:39.000Z"
+    },
+    {
+      "path": "00_META/Project Idea Tracker.md",
+      "title": "🎛️ Project Idea Tracker",
+      "size_bytes": 18520,
+      "modified": "2026-06-07T19:05:05.000Z"
+    },
+    {
+      "path": "00_META/Story arch.md",
+      "title": "Untitled",
+      "size_bytes": 2353,
+      "modified": "2026-06-05T12:57:20.000Z"
+    },
+    {
+      "path": "00_META/Vision and mission statement.md",
+      "title": "Untitled",
+      "size_bytes": 2132,
+      "modified": "2026-06-05T13:00:29.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Logic Pro Integration.md",
+      "title": "🎛️ Elegant Automata as Logic Pro Plugins — Feasibility Analysis",
+      "size_bytes": 16243,
+      "modified": "2026-06-07T19:00:55.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "size_bytes": 6445,
+      "modified": "2026-06-07T12:17:07.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Synthesis vs Sampling.md",
+      "title": "🎛️ Synthesis vs. Sampling — Architectural Analysis for Elegant Automata",
+      "size_bytes": 12494,
+      "modified": "2026-06-07T18:53:12.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/coding_standards.md",
+      "title": "🔬 Real-Time DSP Coding Standards & Best Practices",
+      "size_bytes": 10553,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/high_fidelity_dsp.md",
+      "title": "🎛️ High-Fidelity DSP & Studio-Grade Audio Engineering",
+      "size_bytes": 8513,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/look_ahead_architecture.md",
+      "title": "🎛️ Faster-Than-Real-Time (FTRT) Look-Ahead Architecture",
+      "size_bytes": 7837,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Knowledge Base Mind Map.md",
+      "title": "🧠 Elegant Automata — Knowledge Base Mind Map",
+      "size_bytes": 5537,
+      "modified": "2026-06-07T16:29:06.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Music Datasets.md",
+      "title": "📚 Music Datasets for LLM Fine-Tuning & Style Extraction",
+      "size_bytes": 13338,
+      "modified": "2026-06-07T15:53:44.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "size_bytes": 6445,
+      "modified": "2026-06-07T12:17:14.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/style_extraction_process.md",
+      "title": "🎯 Musician Style Extraction & Quantification for Elegant Automata",
+      "size_bytes": 22543,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/bach.md",
+      "title": "🎹 Technical Composers Analysis: Johann Sebastian Bach",
+      "size_bytes": 9285,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/beethoven.md",
+      "title": "🎹 Technical Composers Analysis: Ludwig van Beethoven",
+      "size_bytes": 10053,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/beethoven_canon.md",
+      "title": "🎼 Ludwig van Beethoven's Entire Canon: The Unified System Architecture",
+      "size_bytes": 8256,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/beethoven_quartets.md",
+      "title": "🎻 Technical Composers Analysis: Beethoven's String Quartets",
+      "size_bytes": 12035,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/composers.md",
+      "title": "🎼 Technical Composers Analysis: Zappa & Stravinsky",
+      "size_bytes": 6693,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/chick_corea.md",
+      "title": "🎹 Technical Composers Analysis: Chick Corea & His Ensembles",
+      "size_bytes": 9829,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/jazz_albums.md",
+      "title": "🎷 The 10 Most Influential American Jazz Albums: A Technical Audit",
+      "size_bytes": 8675,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "06_Guitar_Solos_&_Xenochrony/zappa_solos.md",
+      "title": "🎸 The Frank Zappa Guitar Solos: An Analytical Transcription Audit",
+      "size_bytes": 10522,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "07_Code/website/Deployment Guide.md",
+      "title": "🚀 Deployment Guide",
+      "size_bytes": 3688,
+      "modified": "2026-06-07T20:39:25.000Z"
+    },
+    {
+      "path": "07_Code/website/Vault Extraction Pipeline.md",
+      "title": "⛏️ Vault Extraction Pipeline",
+      "size_bytes": 3744,
+      "modified": "2026-06-07T20:38:58.000Z"
+    },
+    {
+      "path": "07_Code/website/Website.md",
+      "title": "🌐 Elegant Automata Website",
+      "size_bytes": 5815,
+      "modified": "2026-06-07T20:38:20.000Z"
+    },
+    {
+      "path": "Elegant Automata.md",
+      "title": "🎛️ Elegant Automata",
+      "size_bytes": 6026,
+      "modified": "2026-06-07T20:39:53.000Z"
+    },
+    {
+      "path": "Structure.md",
+      "title": "Untitled",
+      "size_bytes": 739,
+      "modified": "2026-06-07T16:58:15.000Z"
+    }
+  ],
+  "change_summary": "(git history unavailable in this build context)"
+}

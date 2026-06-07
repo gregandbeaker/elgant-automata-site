@@ -1,0 +1,275 @@
+---
+// Research Canon — full vault knowledge base rendered live from Obsidian
+import Layout from '../../layouts/Layout.astro';
+import canonData from '../../data/canon.json';
+
+interface CanonFile {
+  path: string;
+  title: string;
+  subtitle?: string;
+  section: string;
+  size_bytes: number;
+  modified: string;
+  word_count: number;
+  excerpt: string;
+  tags: string[];
+  is_index: boolean;
+}
+
+const data = canonData as { files: CanonFile[]; total_files: number; total_words: number; sections: string[]; extracted_at: string; vault_path: string };
+
+// Sort sections
+const sectionOrder = ['00_META', '01_DSP_&_Audio_Physics', '02_Style_Extraction_&_Analysis', '03_Generative_Rhythm_&_Sequencing', '04_Classical_&_Composer_Studies', '05_Jazz_&_Fusion', '06_Guitar_Solos_&_Xenochrony', '07_Code'];
+const sortedSections = data.sections.sort((a, b) => {
+  const ai = sectionOrder.indexOf(a);
+  const bi = sectionOrder.indexOf(b);
+  if (ai !== -1 && bi !== -1) return ai - bi;
+  if (ai !== -1) return -1;
+  if (bi !== -1) return 1;
+  return a.localeCompare(b);
+});
+
+// Group files by section
+const sectionFiles = new Map<string, CanonFile[]>();
+for (const f of data.files) {
+  if (!sectionFiles.has(f.section)) sectionFiles.set(f.section, []);
+  sectionFiles.get(f.section)!.push(f);
+}
+
+const sectionNames: Record<string, string> = {
+  '00_META': 'META — Vision & Planning',
+  '01_DSP_&_Audio_Physics': 'DSP & Audio Physics',
+  '02_Style_Extraction_&_Analysis': 'Style Extraction & Analysis',
+  '03_Generative_Rhythm_&_Sequencing': 'Generative Rhythm & Sequencing',
+  '04_Classical_&_Composer_Studies': 'Classical & Composer Studies',
+  '05_Jazz_&_Fusion': 'Jazz & Fusion',
+  '06_Guitar_Solos_&_Xenochrony': 'Guitar Solos & Xenochrony',
+  '07_Code': 'Code',
+};
+
+const extractedAt = new Date(data.extracted_at).toLocaleString('en-US', {
+  month: 'short', day: 'numeric', year: 'numeric',
+  hour: '2-digit', minute: '2-digit',
+});
+
+function fmtBytes(b: number): string {
+  if (b < 1024) return `${b}B`;
+  const kb = b / 1024;
+  if (kb < 1024) return `${kb.toFixed(1)}KB`;
+  return `${(kb / 1024).toFixed(1)}MB`;
+}
+
+function daysAgo(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  if (days === 0) return 'today';
+  if (days === 1) return 'yesterday';
+  return `${days}d ago`;
+}
+---
+
+<Layout
+  title="Research Canon"
+  description="The living knowledge base of Elegant Automata — pulled live from the Obsidian vault. Every document the agent and I have researched, analyzed, and written."
+>
+  <section class="canon">
+    <div class="container">
+      <h1 class="section-title">
+        <span class="text-accent">▸</span> Research Canon
+      </h1>
+
+      <div class="canon__meta">
+        <p class="text-dim">
+          <span class="text-green">{data.total_files}</span> documents ·
+          <span class="text-green"> {data.total_words.toLocaleString()}</span> words ·
+          extracted <span class="text-accent">{extractedAt}</span>
+        </p>
+      </div>
+
+      <div class="canon__banner">
+        <div class="terminal-window">
+          <div class="terminal-window__bar">
+            <div class="terminal-window__dots">
+              <span class="terminal-window__dot terminal-window__dot--red"></span>
+              <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+              <span class="terminal-window__dot terminal-window__dot--green"></span>
+            </div>
+            agent + human — realtime research stream
+          </div>
+          <div class="terminal-window__body" style="padding: 1rem 1.5rem;">
+            <p style="margin: 0;">
+              <span class="terminal-window__prompt"></span> watch the agent and I learn what we need to know in realtime...
+            </p>
+            <p class="text-dim" style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">
+              This page is rebuilt daily from the live Obsidian vault. Every document below represents
+              a real research session between a human creator and an AI agent — exploring, analyzing,
+              and documenting the architecture of Elegant Automata as it takes shape.
+            </p>
+            <p class="text-dim" style="margin: 0.25rem 0 0 0; font-size: 0.85rem;">
+              <a href="/diffs" class="text-accent" style="text-decoration: underline;">View daily diffs →</a> to see what changed each day.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {
+        sortedSections.filter(s => (sectionFiles.get(s) || []).length > 0).map(section => (
+          <div class="canon__section">
+            <h2 class="canon__section-title">
+              <span class="text-accent">##</span> {sectionNames[section] || section.replace(/_/g, ' ')}
+            </h2>
+            <div class="canon__grid">
+              {(sectionFiles.get(section) || [])
+                .sort((a, b) => {
+                  // Put index files first, then sort by name
+                  if (a.is_index && !b.is_index) return -1;
+                  if (!a.is_index && b.is_index) return 1;
+                  return a.title.localeCompare(b.title);
+                })
+                .map(file => (
+                  <a href={`/canon/${file.path.replace(/\.md$/, '')}`} class="canon__card">
+                    <div class="canon__card-header">
+                      <span class="canon__card-icon">{file.is_index ? '📑' : '📄'}</span>
+                      <span class="canon__card-title">{file.title}</span>
+                    </div>
+                    {file.subtitle && (
+                      <p class="canon__card-subtitle text-dim">{file.subtitle.slice(0, 80)}</p>
+                    )}
+                    <p class="canon__card-excerpt text-dim">{file.excerpt.slice(0, 140)}</p>
+                    <div class="canon__card-meta">
+                      <span class="text-dim">{fmtBytes(file.size_bytes)}</span>
+                      <span class="text-dim">·</span>
+                      <span class="text-dim">{file.word_count.toLocaleString()} words</span>
+                      <span class="text-dim">·</span>
+                      <span class="text-accent">{daysAgo(file.modified)}</span>
+                    </div>
+                  </a>
+                ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+.canon {
+  padding: 4rem 0;
+}
+
+.canon__meta {
+  margin-bottom: 2rem;
+}
+
+.canon__banner {
+  margin-bottom: 3rem;
+}
+
+/* Ensure terminal window styles are available */
+:global(.terminal-window) {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(77, 166, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+:global(.terminal-window__bar) {
+  background: rgba(77, 166, 255, 0.05);
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--color-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.06);
+}
+
+:global(.terminal-window__dots) {
+  display: flex;
+  gap: 6px;
+}
+
+:global(.terminal-window__dot) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+:global(.terminal-window__dot--red) { background: #ff5f57; }
+:global(.terminal-window__dot--yellow) { background: #febc2e; }
+:global(.terminal-window__dot--green) { background: #28c840; }
+
+:global(.terminal-window__prompt) { color: var(--color-accent); }
+:global(.terminal-window__prompt::before) { content: '❯ '; }
+
+.canon__section {
+  margin-bottom: 3rem;
+}
+
+.canon__section-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+}
+
+.canon__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+}
+
+.canon__card {
+  display: block;
+  background: rgba(77, 166, 255, 0.03);
+  border: 1px solid rgba(77, 166, 255, 0.08);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.canon__card:hover {
+  border-color: rgba(77, 166, 255, 0.25);
+  background: rgba(77, 166, 255, 0.06);
+}
+
+.canon__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.canon__card-icon {
+  font-size: 0.9rem;
+}
+
+.canon__card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.canon__card-subtitle {
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+  font-style: italic;
+}
+
+.canon__card-excerpt {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.canon__card-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+</style>

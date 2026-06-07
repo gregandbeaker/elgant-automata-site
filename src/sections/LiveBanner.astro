@@ -1,0 +1,120 @@
+---
+// Live Research Banner — shows on home page below the hero
+import canonData from '../data/canon.json';
+
+const data = canonData as { total_files: number; total_words: number; extracted_at: string };
+const extractedAt = new Date(data.extracted_at).toLocaleString('en-US', {
+  month: 'short', day: 'numeric', year: 'numeric',
+  hour: '2-digit', minute: '2-digit',
+});
+---
+
+<section class="live-banner">
+  <div class="container">
+    <div class="terminal-window">
+      <div class="terminal-window__bar">
+        <div class="terminal-window__dots">
+          <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+          <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+          <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+        </div>
+        scrutinizer — live research stream
+      </div>
+      <div class="terminal-window__body">
+        <p class="live-banner__line">
+          <span class="terminal-window__prompt"></span> watch the agent and I learn what we need to know in realtime...
+        </p>
+        <p class="live-banner__stats text-dim">
+          <span class="text-green">{data.total_files}</span> research documents ·
+          <span class="text-green"> {data.total_words.toLocaleString()}</span> words ·
+          updated <span class="text-accent">{extractedAt}</span>
+        </p>
+        <div class="live-banner__links">
+          <a href="/canon" class="btn btn--outline">
+            ▸ Browse the Research Canon
+          </a>
+          <a href="/diffs" class="btn btn--outline">
+            ▸ See What Changed Today
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.live-banner {
+  padding: 1rem 0 2rem 0;
+}
+
+:global(.terminal-window) {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(77, 166, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+:global(.terminal-window__bar) {
+  background: rgba(77, 166, 255, 0.05);
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--color-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.06);
+}
+
+:global(.terminal-window__dots) {
+  display: flex;
+  gap: 6px;
+}
+
+:global(.terminal-window__dot) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+:global(.terminal-window__dot--yellow) { background: #febc2e; }
+
+:global(.terminal-window__prompt) { color: var(--color-accent); }
+:global(.terminal-window__prompt::before) { content: '❯ '; }
+
+.live-banner__line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem 0;
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.live-banner__stats {
+  font-size: 0.78rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.live-banner__links {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0 1.5rem 1.25rem 1.5rem;
+}
+
+.btn--outline {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  border: 1px solid rgba(77, 166, 255, 0.25);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn--outline:hover {
+  background: rgba(77, 166, 255, 0.08);
+  border-color: rgba(77, 166, 255, 0.5);
+}
+</style>

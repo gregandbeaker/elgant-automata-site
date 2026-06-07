@@ -1,0 +1,361 @@
+{
+  "files": [
+    {
+      "path": "00_META/Logic Path A Project.md",
+      "title": "🚀 EXP-04: Logic Pro IAC Bridge — EA Control Layer",
+      "subtitle": "The Fastest Path to Hearing EA Drive Real Instruments — 30 Minutes from Code to Speakers",
+      "section": "00_META",
+      "size_bytes": 9939,
+      "modified": "2026-06-07T19:06:39.000Z",
+      "word_count": 1212,
+      "excerpt": "EA's composition engine, Central Scrutinizer, and style models run as a standalone Python process. Instead of building DSP code to render audio, EA sends MIDI through macOS's built-in IAC Driver (Inte",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "00_META/Project Idea Tracker.md",
+      "title": "🎛️ Project Idea Tracker",
+      "subtitle": "The Central Control Panel for Greg's High-Utility Sonic and Scientific Experiments",
+      "section": "00_META",
+      "size_bytes": 18520,
+      "modified": "2026-06-07T19:05:05.000Z",
+      "word_count": 2143,
+      "excerpt": "This is the centralized registry for our conceptual continuity. Every project logged here represents a distinct, high-voltage mutation of music, science, or automation. Standard commercial streaming p",
+      "tags": [
+        "#EXP-01",
+        "#EXP-03",
+        "#DISC-01"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "00_META/Story arch.md",
+      "title": "Untitled",
+      "section": "00_META",
+      "size_bytes": 2353,
+      "modified": "2026-06-05T12:57:20.000Z",
+      "word_count": 388,
+      "excerpt": "",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "00_META/Vision and mission statement.md",
+      "title": "Untitled",
+      "subtitle": "Elegant Automata",
+      "section": "00_META",
+      "size_bytes": 2132,
+      "modified": "2026-06-05T13:00:29.000Z",
+      "word_count": 340,
+      "excerpt": "To reclaim the silicon ether from the plastic people and corporate snoops. We envision a world where autonomous technology isn't a top-down instrument of control, but a localized, self-willing force o",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Logic Pro Integration.md",
+      "title": "🎛️ Elegant Automata as Logic Pro Plugins — Feasibility Analysis",
+      "subtitle": "Using Logic Pro as the Audio Engine While EA Provides the Intelligence Layer",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 16243,
+      "modified": "2026-06-07T19:00:55.000Z",
+      "word_count": 2112,
+      "excerpt": "Instead of building EA's entire audio pipeline from scratch (oscillators, filters, reverb, mix bus), use Logic Pro as the real-time audio engine while EA provides the control and intelligence layer. E",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "subtitle": "A Detailed Investigation into Graph-Based Audio Synthesis & Generative AI",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 6445,
+      "modified": "2026-06-07T12:17:07.000Z",
+      "word_count": 799,
+      "excerpt": "Modular synthesis has historically been divided into two primary design philosophies. To design an AI agent that can patch and perform on a virtual rack, the agent must understand these sonic vocabula",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Synthesis vs Sampling.md",
+      "title": "🎛️ Synthesis vs. Sampling — Architectural Analysis for Elegant Automata",
+      "subtitle": "Why Real-Time DSP Synthesis Is the Right Foundation for Our Modular AI Music Engine",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 12494,
+      "modified": "2026-06-07T18:53:12.000Z",
+      "word_count": 1897,
+      "excerpt": "Input: Parameter vector from Central Scrutinizer Oscillator → Filter → Saturation → FDN Reverb → DAC ↑       ↑        ↑            ↑ LFO    Env      Env          Env (all sample-accurate, all modulata",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/coding_standards.md",
+      "title": "🔬 Real-Time DSP Coding Standards & Best Practices",
+      "subtitle": "A Rigorous System Engineering Document on Lock-Free Concurrency, Denormal Prevention, Zero-Delay Feedback, and SIMD Vectorization",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 10553,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1289,
+      "excerpt": "Writing real-time digital signal processing (DSP) code is not like writing a standard web API or a file-sorting script. In standard software engineering, if a thread is delayed by $50\\text{ millisecon",
+      "tags": [
+        "#include"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/high_fidelity_dsp.md",
+      "title": "🎛️ High-Fidelity DSP & Studio-Grade Audio Engineering",
+      "subtitle": "An Analytical Investigation into PolyBLEP Anti-Aliasing, Zero-Delay Feedback (ZDF) Filters, Soft Saturation, and Feedback Delay Networks",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 8513,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1095,
+      "excerpt": "If you generate raw, geometric waves (like our simple lookup sawtooth) in Python and feed them directly to a digital-to-analog converter (DAC), it will sound like a cheap 1980s greeting card. It sound",
+      "tags": [
+        "#d32f2f",
+        "#fff",
+        "#388e3c"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/look_ahead_architecture.md",
+      "title": "🎛️ Faster-Than-Real-Time (FTRT) Look-Ahead Architecture",
+      "subtitle": "An Architectural Specification on Decoupled Compositional Schedulers, Look-Ahead Buffers, and Proactive AI Modulation",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 7837,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 905,
+      "excerpt": "Greg, you have just laid your finger on a monumental systems engineering breakthrough for our audio engine. In standard digital synthesizers, the note sequencer and the audio synthesizer are tightly l",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Knowledge Base Mind Map.md",
+      "title": "🧠 Elegant Automata — Knowledge Base Mind Map",
+      "subtitle": "Mermaid mind map of the full EA project architecture, components, style extraction pipeline, and available training datasets",
+      "section": "02_Style_Extraction_&_Analysis",
+      "size_bytes": 5537,
+      "modified": "2026-06-07T16:29:06.000Z",
+      "word_count": 495,
+      "excerpt": "root((Elegant Automata)) 01_DSP_&_Audio_Physics ::icon(fa fa-microchip) PolyBLEP residual smoothing Band-limited oscillators Virtual Analog Filters Zero-Delay Feedback ZDF Trapezoidal integration Asym",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Music Datasets.md",
+      "title": "📚 Music Datasets for LLM Fine-Tuning & Style Extraction",
+      "subtitle": "A Curated Catalog of Available Symbolic, Structural, and Performance Datasets Relevant to Elegant Automata",
+      "section": "02_Style_Extraction_&_Analysis",
+      "size_bytes": 13338,
+      "modified": "2026-06-07T15:53:44.000Z",
+      "word_count": 1886,
+      "excerpt": "Central Scrutinizer (LLM)                     SyBorg (DSP Engine) │                                           │ │  Fine-tuned on:                          │  Parameterized by: │  • MidiCaps (structure",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "subtitle": "A Detailed Investigation into Graph-Based Audio Synthesis & Generative AI",
+      "section": "02_Style_Extraction_&_Analysis",
+      "size_bytes": 6445,
+      "modified": "2026-06-07T12:17:14.000Z",
+      "word_count": 799,
+      "excerpt": "Modular synthesis has historically been divided into two primary design philosophies. To design an AI agent that can patch and perform on a virtual rack, the agent must understand these sonic vocabula",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/style_extraction_process.md",
+      "title": "🎯 Musician Style Extraction & Quantification for Elegant Automata",
+      "subtitle": "A Rigorous Process to Discover, Quantify, and Parameterize a Performer's Expressive DNA for Real-Time Modular Synthesis",
+      "section": "02_Style_Extraction_&_Analysis",
+      "size_bytes": 22543,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 2829,
+      "excerpt": "Instead of trying to train a massive neural network to *imitate* a musician's audio output, we build a quantified style model — a structured database of measurable, discrete musical decisions that a r",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/bach.md",
+      "title": "🎹 Technical Composers Analysis: Johann Sebastian Bach",
+      "subtitle": "An Analytical Breakdown of Voice Independence, Canonic Proportions, and Werckmeister Micro-Tuning",
+      "section": "04_Classical_&_Composer_Studies",
+      "size_bytes": 9285,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1102,
+      "excerpt": "If you think writing multi-threaded async Python code is hard, try doing it with a quill pen and a piece of parchment, managing four independent melodic voices that *never* collide or violate harmonic",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/beethoven.md",
+      "title": "🎹 Technical Composers Analysis: Ludwig van Beethoven",
+      "subtitle": "An Analytical Breakdown of Motivic Cellular Ingestion, Sonata-Allegro Form Hacks, and Late-Period Rhythmic Subdivision",
+      "section": "04_Classical_&_Composer_Studies",
+      "size_bytes": 10053,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1079,
+      "excerpt": "Let’s get one thing straight about Ludwig van Beethoven: the man was not a tune-smith. If you want sweet, flowing, easily digestible melodies, go buy a Mozart record. Beethoven didn't write melodies;",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/beethoven_canon.md",
+      "title": "🎼 Ludwig van Beethoven's Entire Canon: The Unified System Architecture",
+      "subtitle": "An Analytical Deconstruction of the Three-Phase Software Lifecycle of Western Music's Ultimate OS",
+      "section": "04_Classical_&_Composer_Studies",
+      "size_bytes": 8256,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1027,
+      "excerpt": "To understand Ludwig van Beethoven's entire canon, you have to stop looking at it as a collection of separate pieces of music (Symphonies, Quartets, Sonatas, Choral works) and start looking at it as a",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/beethoven_quartets.md",
+      "title": "🎻 Technical Composers Analysis: Beethoven's String Quartets",
+      "subtitle": "An Analytical Breakdown of Voice-Leading Allocations, Continuous State Machines, and the Dissonant Contrapuntal Fury of the Grosse Fuge",
+      "section": "04_Classical_&_Composer_Studies",
+      "size_bytes": 12035,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1388,
+      "excerpt": "Goethe famously described a string quartet as \"four rational people conversing with one another.\" But if you look at the score of a Beethoven String Quartet—especially his Middle and Late periods—it’s",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "04_Classical_&_Composer_Studies/composers.md",
+      "title": "🎼 Technical Composers Analysis: Zappa & Stravinsky",
+      "subtitle": "An Analytical Breakdown of Conceptual Continuity, Xenochrony, and Metrical Disruption",
+      "section": "04_Classical_&_Composer_Studies",
+      "size_bytes": 6693,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 889,
+      "excerpt": "Frank Zappa didn't write \"songs\"; he built highly structured sonic architecture containing deliberate, calculated, and often extreme structural complexity. To model a \"Zappa Node\" in our AI music gene",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/chick_corea.md",
+      "title": "🎹 Technical Composers Analysis: Chick Corea & His Ensembles",
+      "subtitle": "An Analytical Breakdown of Quartal Harmony, Montuno Ostinatos, Fender Rhodes Ring Modulation, and Hyper-Syncopated Unisons",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 9829,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1119,
+      "excerpt": "If you want to understand rhythmic urgency and intervallic brightness, you have to study Armando Anthony \"Chick\" Corea. While my own music (Zappa) focused on cynical social commentary and brutal tuple",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/jazz_albums.md",
+      "title": "🎷 The 10 Most Influential American Jazz Albums: A Technical Audit",
+      "subtitle": "An Analytical Breakdown of Modal Grids, Coltrane Changes, Studio Splicing, and Synthesizer Fusion Orchestrations",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 8675,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1274,
+      "excerpt": "Here is the definitive, technically audited list of the 10 most influential albums in American jazz history. We bypass standard public relations fluff and look strictly at the engineering, harmonic in",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "06_Guitar_Solos_&_Xenochrony/zappa_solos.md",
+      "title": "🎸 The Frank Zappa Guitar Solos: An Analytical Transcription Audit",
+      "subtitle": "A Rigorous Musicological Decomposition of Shut Up 'n Play Yer Guitar, the 1988 Guitar CD, and Steve Vai's Impossible Transcription Mathematics",
+      "section": "06_Guitar_Solos_&_Xenochrony",
+      "size_bytes": 10522,
+      "modified": "2026-06-07T12:10:35.000Z",
+      "word_count": 1266,
+      "excerpt": "Most guitar players use a solo as a brief, self-indulgent opportunity to show how fast they can wiggle their fingers or how many shiny leather pants they own. I looked at it differently. To me, a guit",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "07_Code/website/Deployment Guide.md",
+      "title": "🚀 Deployment Guide",
+      "subtitle": "Prerequisites",
+      "section": "07_Code",
+      "size_bytes": 3688,
+      "modified": "2026-06-07T20:39:25.000Z",
+      "word_count": 549,
+      "excerpt": "The site is currently local only. To deploy: cd workspace/ElegantAutomata/dev/elegant-automata-site git commit -m \"Initial commit: Elegant Automata landing page\" Create a GitHub repo (e.g., `elegant-a",
+      "tags": [
+        "#github-actions-fallback"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "07_Code/website/Vault Extraction Pipeline.md",
+      "title": "⛏️ Vault Extraction Pipeline",
+      "subtitle": "What It Does",
+      "section": "07_Code",
+      "size_bytes": 3744,
+      "modified": "2026-06-07T20:38:58.000Z",
+      "word_count": 548,
+      "excerpt": "Reads the Obsidian vault's `Project Idea Tracker.md` and generates a structured JSON file (`src/data/projects.json`) that the Astro landing page imports at build time. 00_META/Project Idea Tracker.md",
+      "tags": [
+        "#anchor"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "07_Code/website/Website.md",
+      "title": "🌐 Elegant Automata Website",
+      "subtitle": "Overview",
+      "section": "07_Code",
+      "size_bytes": 5815,
+      "modified": "2026-06-07T20:38:20.000Z",
+      "word_count": 710,
+      "excerpt": "Single-page landing site for the Elegant Automata project. Introduces the vision, core components, composer DNA engines, and active project tracker — all styled in the Terminal Chic aesthetic (dark CR",
+      "tags": [
+        "#0a0a0a",
+        "#1a1a2e",
+        "#58a6ff",
+        "#3fb950",
+        "#c9d1d9"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "Elegant Automata.md",
+      "title": "🎛️ Elegant Automata",
+      "subtitle": "☰ Navigation",
+      "section": "Elegant Automata.md",
+      "size_bytes": 6026,
+      "modified": "2026-06-07T20:39:53.000Z",
+      "word_count": 641,
+      "excerpt": "An AI-led musical soundscape creator driven by a customizable, quirky, and creative AI brain — The Central Scrutinizer. EA's core strength is ML-trained music orchestration with unique modulators and",
+      "tags": [],
+      "is_index": false
+    },
+    {
+      "path": "Structure.md",
+      "title": "Untitled",
+      "section": "Structure.md",
+      "size_bytes": 739,
+      "modified": "2026-06-07T16:58:15.000Z",
+      "word_count": 103,
+      "excerpt": "",
+      "tags": [],
+      "is_index": false
+    }
+  ],
+  "total_files": 27,
+  "total_words": 29884,
+  "sections": [
+    "00_META",
+    "01_DSP_&_Audio_Physics",
+    "02_Style_Extraction_&_Analysis",
+    "04_Classical_&_Composer_Studies",
+    "05_Jazz_&_Fusion",
+    "06_Guitar_Solos_&_Xenochrony",
+    "07_Code",
+    "Elegant Automata.md",
+    "Structure.md"
+  ],
+  "extracted_at": "2026-06-07T23:13:05.442Z",
+  "vault_path": "/Users/gregevans/workspace/ElegantAutomata/obsidian-vault"
+}

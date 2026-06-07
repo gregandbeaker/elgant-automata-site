@@ -4,6 +4,11 @@
  * Reads the Elegant Automata Obsidian vault and generates structured data
  * for the Astro landing page at build time.
  *
+ * Outputs:
+ *   src/data/projects.json     — project tracker data
+ *   src/data/canon.json        — full vault file tree with metadata
+ *   src/data/daily.json        — snapshot for today (for diff history)
+ *
  * Usage: npx tsx scripts/extract-vault.ts
  */
 
@@ -20,19 +25,20 @@ const VAULT_ROOT =
   process.env.EA_VAULT_ROOT ||
   path.join(
     process.env.HOME!,
-    'Library/Mobile Documents/iCloud~md~obsidian/Documents/Elegant Automata'
+    'workspace/ElegantAutomata/obsidian-vault'
   );
 
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'src', 'data');
+const DAILY_DIR = path.resolve(OUTPUT_DIR, 'daily');
 
 // Status emoji → machine-readable status
 const STATUS_MAP: Record<string, string> = {
-  '🟢': 'initiated',
-  '🟡': 'planned',
-  '🟠': 'active',
-  '🔴': 'blocked',
-  '✅': 'complete',
-  '⬜': 'pending',
+  '\u{1F7E2}': 'initiated',
+  '\u{1F7E1}': 'planned',
+  '\u{1F7E0}': 'active',
+  '\u{1F534}': 'blocked',
+  '\u2705': 'complete',
+  '\u2B1C': 'pending',
 };
 
 // ── Types ──────────────────────────────────────────────────────
@@ -60,19 +66,45 @@ interface ExtractionResult {
   vault_path: string;
 }
 
+interface CanonFile {
+  path: string;           // relative to vault root
+  title: string;          // extracted from first # heading
+  subtitle?: string;      // extracted from ## or ###
+  section: string;        // top-level directory (e.g. "01_DSP_&_Audio_Physics")
+  size_bytes: number;
+  modified: string;       // ISO date string
+  word_count: number;
+  excerpt: string;        // first 160 chars of body (after frontmatter/headers)
+  tags: string[];         // any #hashtags found
+  is_index: boolean;      // is this a _index.md or section landing?
+}
+
+interface CanonResult {
+  files: CanonFile[];
+  total_files: number;
+  total_words: number;
+  sections: string[];
+  extracted_at: string;
+  vault_path: string;
+}
+
+interface DailySnapshot {
+  date: string;           // YYYY-MM-DD
+  files: { path: string; title: string; size_bytes: number; modified: string }[];
+  change_summary: string; // git log for today (if available)
+}
+
 // ── Helpers ────────────────────────────────────────────────────
 
-/** Strip markdown bold markers and wiki links */
 function cleanMarkdown(text: string): string {
   return text
-    .replace(/\*\*(.*?)\*\*/g, '$1') // bold → plain
-    .replace(/\[\[(.*?)\]\]/g, '$1') // [[link]] → text
-    .replace(/\[(.*?)\]\(.*?\)/g, '$1') // [text](url) → text
-    .replace(/\|(.*?)$/g, '') // [[link|alias]] → alias
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\[\[(.*?)\]\]/g, '$1')
+    .replace(/\[(.*?)\]\(.*?\)/g, '$1')
+    .replace(/\|(.*?)$/g, '')
     .trim();
 }
 
-/** Extract status from emoji + word in table cell */
 function parseStatus(cell: string): string {
   for (const [emoji, status] of Object.entries(STATUS_MAP)) {
     if (cell.includes(emoji)) return status;
@@ -80,35 +112,18 @@ function parseStatus(cell: string): string {
   return 'pending';
 }
 
-/** Parse the Active Experiments Dashboard table */
 function parseProjectTable(lines: string[]): Project[] {
   const projects: Project[] = [];
   let inTable = false;
 
   for (const line of lines) {
     const trimmed = line.trim();
-
-    // Detect table header
-    if (trimmed.startsWith('| ID | Project') && trimmed.includes('Status')) {
-      inTable = true;
-      continue;
-    }
-
-    // Skip separator line
+    if (trimmed.startsWith('| ID | Project') && trimmed.includes('Status')) { inTable = true; continue; }
     if (inTable && /^\| :?-+/.test(trimmed)) continue;
-
-    // Empty line ends the table
     if (inTable && trimmed === '') break;
-
-    // Skip non-table lines
     if (!inTable || !trimmed.startsWith('| **')) continue;
 
-    // Parse row: split by |, trim each cell
-    const cells = trimmed
-      .split('|')
-      .map((c) => c.trim())
-      .filter(Boolean);
-
+    const cells = trimmed.split('|').map((c) => c.trim()).filter(Boolean);
     if (cells.length >= 5) {
       projects.push({
         id: cleanMarkdown(cells[0]),
@@ -120,11 +135,9 @@ function parseProjectTable(lines: string[]): Project[] {
       });
     }
   }
-
   return projects;
 }
 
-/** Parse project detail sections (## 🧬 EXP-01: The Album Generator, etc.) */
 function parseProjectDetails(lines: string[]): ProjectDetail[] {
   const details: ProjectDetail[] = [];
   let current: Partial<ProjectDetail> | null = null;
@@ -132,143 +145,220 @@ function parseProjectDetails(lines: string[]): ProjectDetail[] {
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-
-    // Match section headers like "## 🧬 EXP-01: The Album Generator"
-    const headerMatch = line.match(
-      /^##\s+.+?\s+(EXP-\d+|DISC-\d+):\s+(.+)$/
-    );
+    const headerMatch = line.match(/^##\s+.+?\s+(EXP-\d+|DISC-\d+):\s+(.+)$/);
 
     if (headerMatch) {
-      // Save previous
-      if (current && current.id) {
-        details.push(current as ProjectDetail);
+      if (current && current.id) details.push(current as ProjectDetail);
+      current = { id: headerMatch[1], title: headerMatch[2].trim(), subtitle: '', description: '' };
+      if (lines[i + 1]?.startsWith('###')) {
+        current.subtitle = lines[i + 1].replace(/^###\s*/, '').replace(/\*/g, '').trim();
+        i++;
       }
-
-      current = {
-        id: headerMatch[1],
-        title: headerMatch[2].trim(),
-        subtitle: '',
-        description: '',
-      };
-
-      // Check next line for ### subtitle
-      if (lines[i + 1] && lines[i + 1].startsWith('###')) {
-        current.subtitle = lines[i + 1]
-          .replace(/^###\s*/, '')
-          .replace(/\*/g, '')
-          .trim();
-        i++; // skip the subtitle line
-      }
-
       collectingDescription = false;
       continue;
     }
 
-    // Skip the italic tagline "(Or: ...)"
-    if (
-      current &&
-      !collectingDescription &&
-      line.trim().startsWith('*(')
-    ) {
-      collectingDescription = true;
-      continue;
-    }
+    if (current && !collectingDescription && line.trim().startsWith('*(')) { collectingDescription = true; continue; }
 
-    // Skip sub-headers and metadata while collecting
-    if (
-      current &&
-      collectingDescription &&
-      !current.description
-    ) {
-      // Skip lines we don't want as description
-      if (
-        !line.trim() ||
-        line.startsWith('#') ||
-        line.startsWith('|') ||
-        line.startsWith('```') ||
-        line.startsWith('>') ||
-        line.startsWith('-') ||
-        line.startsWith('![')
-      ) {
-        continue;
-      }
-
-      const cleaned = line
-        .replace(/\*\*/g, '')
-        .replace(/\[\[(.*?)\]\]/g, '$1')
-        .replace(/\[(.*?)\]\(.*?\)/g, '$1')
-        .trim();
-
-      if (cleaned.length > 50) {
-        current.description = cleaned;
-        collectingDescription = false;
-      }
+    if (current && collectingDescription && !current.description) {
+      if (!line.trim() || line.startsWith('#') || line.startsWith('|') ||
+          line.startsWith('```') || line.startsWith('>') || line.startsWith('-') || line.startsWith('![')) continue;
+      const cleaned = line.replace(/\*\*/g, '').replace(/\[\[(.*?)\]\]/g, '$1').replace(/\[(.*?)\]\(.*?\)/g, '$1').trim();
+      if (cleaned.length > 50) { current.description = cleaned; collectingDescription = false; }
     }
   }
-
-  // Save last one
-  if (current && current.id) {
-    details.push(current as ProjectDetail);
-  }
-
+  if (current && current.id) details.push(current as ProjectDetail);
   return details;
+}
+
+// ── Vault Canon Scanner ────────────────────────────────────────
+
+/** Extract the title from a markdown file */
+function extractTitle(lines: string[]): string {
+  for (const line of lines) {
+    const match = line.match(/^#\s+(.+)/);
+    if (match) return cleanMarkdown(match[1]);
+  }
+  return 'Untitled';
+}
+
+/** Extract subtitle from ## or ### */
+function extractSubtitle(lines: string[]): string | undefined {
+  for (const line of lines) {
+    const match = line.match(/^##\s+(.+)/) || line.match(/^###\s+(.+)/);
+    if (match) {
+      const title = match[1].replace(/^🚀\s*/, '').replace(/\*/g, '').trim();
+      if (title.length > 5) return title;
+    }
+  }
+  return undefined;
+}
+
+/** Extract hashtags */
+function extractTags(content: string): string[] {
+  const matches = content.match(/#\w[\w-]+/g);
+  return matches ? [...new Set(matches.filter(t => !/^\d+$/.test(t.replace('#', ''))).slice(0, 10))] : [];
+}
+
+/** Generate excerpt from body text */
+function extractExcerpt(lines: string[], title: string, subtitle?: string): string {
+  let pastHeaders = false;
+  let excerpt = '';
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('# ')) { pastHeaders = true; continue; }
+    if (trimmed.startsWith('## ') || trimmed.startsWith('### ')) { pastHeaders = true; continue; }
+    if (!pastHeaders) continue;
+    if (!trimmed || trimmed.startsWith('>') || trimmed.startsWith('|') ||
+        trimmed.startsWith('```') || trimmed.startsWith('[') || trimmed.startsWith('-') ||
+        trimmed.startsWith('*/') || trimmed.startsWith('*') && !trimmed.startsWith('**')) continue;
+    const cleaned = cleanMarkdown(trimmed);
+    if (cleaned.length > 20) {
+      excerpt += cleaned + ' ';
+      if (excerpt.length > 200) break;
+    }
+  }
+  return excerpt.slice(0, 200).trim();
+}
+
+/** Recursively scan the vault for all .md files */
+function scanVault(root: string): CanonFile[] {
+  const files: CanonFile[] = [];
+  const ignoreDirs = new Set(['.obsidian', '.git', 'node_modules']);
+
+  function walk(dir: string) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory() && !ignoreDirs.has(entry.name)) {
+        walk(fullPath);
+      } else if (entry.isFile() && entry.name.endsWith('.md')) {
+        const relPath = path.relative(root, fullPath);
+        const stat = fs.statSync(fullPath);
+        const content = fs.readFileSync(fullPath, 'utf-8');
+        const lines = content.split('\n');
+        const section = relPath.split(path.sep)[0] || 'root';
+        const fileTitle = extractTitle(lines);
+        const wordCount = content.split(/\s+/).length;
+        const isIndex = entry.name.startsWith('_index');
+
+        files.push({
+          path: relPath,
+          title: fileTitle,
+          subtitle: extractSubtitle(lines),
+          section,
+          size_bytes: stat.size,
+          modified: stat.mtime.toISOString(),
+          word_count: wordCount,
+          excerpt: extractExcerpt(lines, fileTitle),
+          tags: extractTags(content),
+          is_index: isIndex,
+        });
+      }
+    }
+  }
+
+  walk(root);
+  return files;
 }
 
 // ── Main ───────────────────────────────────────────────────────
 
 function main() {
-  console.log(`\n  📂 Vault: ${VAULT_ROOT}\n`);
+  console.log(`\n  \u{1F4C2} Vault: ${VAULT_ROOT}\n`);
 
-  const trackerPath = path.join(
-    VAULT_ROOT,
-    '00_META',
-    'Project Idea Tracker.md'
-  );
+  const trackerPath = path.join(VAULT_ROOT, '00_META', 'Project Idea Tracker.md');
 
+  // ─── PROJECTS ────────────────────────────────────────────────
   if (!fs.existsSync(trackerPath)) {
-    console.warn(`  ⚠️  Vault not found — using pre-committed project data`);
-    console.warn(`     (CI/docker: vault only exists on local machine)`);
+    console.warn('  \u26A0\uFE0F  Vault not found — using pre-committed project data');
+    console.warn('     (CI/docker: vault only exists on local machine)');
     process.exit(0);
   }
 
   const content = fs.readFileSync(trackerPath, 'utf-8');
   const lines = content.split('\n');
-
-  // Parse
   const projects = parseProjectTable(lines);
   const details = parseProjectDetails(lines);
-
-  // Merge details into projects
   const detailMap = new Map(details.map((d) => [d.id, d]));
   const merged: Project[] = projects.map((p) => {
     const detail = detailMap.get(p.id);
     return detail ? { ...p, detail } : p;
   });
 
-  // Build result
   const result: ExtractionResult = {
     projects: merged,
     extracted_at: new Date().toISOString(),
     vault_path: VAULT_ROOT,
   };
 
-  // Write
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-
-  const outputPath = path.join(OUTPUT_DIR, 'projects.json');
-  fs.writeFileSync(outputPath, JSON.stringify(result, null, 2), 'utf-8');
-
-  console.log(`  ✅ Extracted ${merged.length} projects`);
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'projects.json'), JSON.stringify(result, null, 2), 'utf-8');
+  console.log(`  \u2705 Extracted ${merged.length} projects`);
   console.log(`     ${merged.filter((p) => p.detail).length} with detail sections`);
-  console.log(`  📄 Output: ${outputPath}`);
-  console.log(`  🕐 ${result.extracted_at}\n`);
+
+  // ─── CANON (FULL VAULT) ──────────────────────────────────────
+  const canonFiles = scanVault(VAULT_ROOT);
+  const sections = [...new Set(canonFiles.map((f) => f.section))].sort();
+  const totalWords = canonFiles.reduce((sum, f) => sum + f.word_count, 0);
+
+  const canonResult: CanonResult = {
+    files: canonFiles,
+    total_files: canonFiles.length,
+    total_words: totalWords,
+    sections,
+    extracted_at: new Date().toISOString(),
+    vault_path: VAULT_ROOT,
+  };
+
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'canon.json'), JSON.stringify(canonResult, null, 2), 'utf-8');
+  console.log(`  \u2705 Extracted ${canonFiles.length} canonical files`);
+  console.log(`     ${totalWords.toLocaleString()} words across ${sections.length} sections`);
+
+  // ─── DAILY SNAPSHOT ──────────────────────────────────────────
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const dailyFiles = canonFiles.map((f) => ({
+    path: f.path,
+    title: f.title,
+    size_bytes: f.size_bytes,
+    modified: f.modified,
+  }));
+
+  // Try to get git log for today's changes
+  let changeSummary = '';
+  try {
+    const { execSync } = require('node:child_process');
+    changeSummary = execSync(
+      `git log --pretty=format:"%h %s" --since="${today} 00:00" --until="${today} 23:59" -- vault/ 2>/dev/null || echo ""`,
+      { cwd: path.resolve(VAULT_ROOT, '..'), encoding: 'utf-8', timeout: 5000 }
+    ).trim();
+  } catch {
+    changeSummary = '(git history unavailable in this build context)';
+  }
+
+  const snapshot: DailySnapshot = {
+    date: today,
+    files: dailyFiles,
+    change_summary: changeSummary,
+  };
+
+  fs.mkdirSync(DAILY_DIR, { recursive: true });
+  fs.writeFileSync(path.join(DAILY_DIR, `${today}.json`), JSON.stringify(snapshot, null, 2), 'utf-8');
+  console.log(`  \u2705 Saved daily snapshot: ${today}`);
+
+  // ─── SUMMARY ─────────────────────────────────────────────────
+  console.log(`\n  \u{1F4C4} Outputs:`);
+  console.log(`     projects.json  — ${merged.length} projects`);
+  console.log(`     canon.json     — ${canonFiles.length} files (${totalWords.toLocaleString()} words)`);
+  console.log(`     daily/${today}.json — daily snapshot`);
+  console.log(`  \u{1F550} ${new Date().toISOString()}\n`);
 }
 
 // Wrap in try-catch so parse errors don't block CI builds
 try {
   main();
 } catch (err) {
-  console.warn(`  ⚠️  Extraction error — using pre-committed data`);
+  console.warn('  \u26A0\uFE0F  Extraction error — using pre-committed data');
   console.warn(`     ${err instanceof Error ? err.message : String(err)}`);
   process.exit(0);
 }

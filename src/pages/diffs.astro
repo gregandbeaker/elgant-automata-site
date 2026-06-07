@@ -1,0 +1,283 @@
+---
+// Daily Diffs — see what the agent and I learned each day
+import Layout from '../layouts/Layout.astro';
+import canonData from '../data/canon.json';
+
+interface CanonFile {
+  path: string;
+  title: string;
+  section: string;
+  size_bytes: number;
+  modified: string;
+  word_count: number;
+}
+
+const data = canonData as { files: CanonFile[]; total_files: number; total_words: number; sections: string[]; extracted_at: string };
+
+// Group files by section
+const sectionFiles = new Map<string, CanonFile[]>();
+for (const f of data.files) {
+  if (!sectionFiles.has(f.section)) sectionFiles.set(f.section, []);
+  sectionFiles.get(f.section)!.push(f);
+}
+
+const sectionOrder = ['00_META', '01_DSP_&_Audio_Physics', '02_Style_Extraction_&_Analysis', '03_Generative_Rhythm_&_Sequencing', '04_Classical_&_Composer_Studies', '05_Jazz_&_Fusion', '06_Guitar_Solos_&_Xenochrony', '07_Code'];
+const sortedSections = data.sections.sort((a, b) => {
+  const ai = sectionOrder.indexOf(a);
+  const bi = sectionOrder.indexOf(b);
+  if (ai !== -1 && bi !== -1) return ai - bi;
+  if (ai !== -1) return -1;
+  if (bi !== -1) return 1;
+  return a.localeCompare(b);
+});
+
+const sectionNames: Record<string, string> = {
+  '00_META': 'META',
+  '01_DSP_&_Audio_Physics': 'DSP & Audio Physics',
+  '02_Style_Extraction_&_Analysis': 'Style Extraction & Analysis',
+  '03_Generative_Rhythm_&_Sequencing': 'Rhythm & Sequencing',
+  '04_Classical_&_Composer_Studies': 'Classical Studies',
+  '05_Jazz_&_Fusion': 'Jazz & Fusion',
+  '06_Guitar_Solos_&_Xenochrony': 'Guitar & Xenochrony',
+  '07_Code': 'Code',
+};
+
+// Sort files by modification time (most recent first) within section
+for (const [section, files] of sectionFiles) {
+  files.sort((a, b) => new Date(b.modified).getTime() - new Date(a.modified).getTime());
+}
+
+const extractedAt = new Date(data.extracted_at).toLocaleString('en-US', {
+  month: 'short', day: 'numeric', year: 'numeric',
+  hour: '2-digit', minute: '2-digit',
+});
+
+function daysAgo(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  if (days === 0) return 'today';
+  if (days === 1) return 'yesterday';
+  return `${days}d ago`;
+}
+
+function fmtBytes(b: number): string {
+  if (b < 1024) return `${b}B`;
+  const kb = b / 1024;
+  if (kb < 1024) return `${kb.toFixed(1)}KB`;
+  return `${(kb / 1024).toFixed(1)}MB`;
+}
+
+function colorForSection(section: string): string {
+  const colors: Record<string, string> = {
+    '00_META': '#ff5f57',
+    '01_DSP_&_Audio_Physics': '#28c840',
+    '02_Style_Extraction_&_Analysis': '#febc2e',
+    '03_Generative_Rhythm_&_Sequencing': '#ff9f43',
+    '04_Classical_&_Composer_Studies': '#a29bfe',
+    '05_Jazz_&_Fusion': '#fd79a8',
+    '06_Guitar_Solos_&_Xenochrony': '#00cec9',
+    '07_Code': '#74b9ff',
+  };
+  return colors[section] || 'var(--color-dim)';
+}
+---
+
+<Layout
+  title="Daily Diffs"
+  description="Track the evolution of Elegant Automata — see what the agent and I researched, wrote, and changed each day."
+>
+  <section class="diffs">
+    <div class="container">
+      <h1 class="section-title">
+        <span class="text-accent">▸</span> Daily Diffs
+      </h1>
+
+      <div class="canon__banner">
+        <div class="terminal-window">
+          <div class="terminal-window__bar">
+            <div class="terminal-window__dots">
+              <span class="terminal-window__dot terminal-window__dot--red"></span>
+              <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+              <span class="terminal-window__dot terminal-window__dot--green"></span>
+            </div>
+            diffs — voxel by voxel, document by document
+          </div>
+          <div class="terminal-window__body" style="padding: 1rem 1.5rem;">
+            <p style="margin: 0;">
+              <span class="terminal-window__prompt"></span> track the research as it unfolds — every document below is timestamped with its last edit
+            </p>
+            <p class="text-dim" style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">
+              The grid shows what changed and when. Each day's work leaves a trace.
+              As daily snapshots accumulate, you'll see a full timeline of the agent's research journey.
+            </p>
+            <p class="text-dim" style="margin: 0.25rem 0 0 0; font-size: 0.85rem;">
+              <a href="/canon" class="text-accent" style="text-decoration: underline;">Browse the full research canon →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="diffs__meta">
+        <p class="text-dim">
+          Snapshot from <span class="text-accent">{extractedAt}</span> ·
+          <span class="text-green"> {data.total_files}</span> files ·
+          <span class="text-green"> {data.total_words.toLocaleString()}</span> words
+        </p>
+      </div>
+
+      <!-- Daily change grid -->
+      <div class="diffs__grid">
+        {
+          sortedSections.filter(s => (sectionFiles.get(s) || []).length > 0).map(section => (
+            <div class="diffs__section-group">
+              <h2 class="diffs__section-title">
+                <span class="text-accent">##</span> {sectionNames[section] || section.replace(/_/g, ' ')}
+              </h2>
+              <div class="diffs__timeline">
+                {(sectionFiles.get(section) || []).map(file => (
+                  <div class="diffs__entry">
+                    <div 
+                      class="diffs__entry-dot" 
+                      style={`background: ${colorForSection(file.section)}`}
+                    ></div>
+                    <div class="diffs__entry-content">
+                      <div class="diffs__entry-title">
+                        <span class="text-green">{file.title}</span>
+                      </div>
+                      <div class="diffs__entry-meta">
+                        <span class="text-dim">{fmtBytes(file.size_bytes)}</span>
+                        <span class="text-dim">·</span>
+                        <span class="text-dim">{file.word_count.toLocaleString()} words</span>
+                        <span class="text-dim">·</span>
+                        <span class="text-accent">edited {daysAgo(file.modified)}</span>
+                      </div>
+                      <div class="diffs__entry-date text-dim" style="font-size: 0.65rem;">
+                        {new Date(file.modified).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="diffs__footer">
+        <hr class="section-divider">
+        <p class="text-dim" style="text-align: center; font-size: var(--font-size-sm);">
+          As time passes, this page will accumulate daily snapshots showing a complete git-style history of
+          the research project. Every edit, every new document, every refinement — visible and traceable.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.diffs {
+  padding: 4rem 0;
+}
+
+.canon__banner {
+  margin-bottom: 2rem;
+}
+
+:global(.terminal-window) {
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(77, 166, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+:global(.terminal-window__bar) {
+  background: rgba(77, 166, 255, 0.05);
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--color-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.06);
+}
+
+:global(.terminal-window__dots) {
+  display: flex;
+  gap: 6px;
+}
+
+:global(.terminal-window__dot) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+:global(.terminal-window__dot--red) { background: #ff5f57; }
+:global(.terminal-window__dot--yellow) { background: #febc2e; }
+:global(.terminal-window__dot--green) { background: #28c840; }
+
+:global(.terminal-window__prompt) { color: var(--color-accent); }
+:global(.terminal-window__prompt::before) { content: '❯ '; }
+
+.diffs__meta {
+  margin-bottom: 2rem;
+}
+
+.diffs__section-group {
+  margin-bottom: 2.5rem;
+}
+
+.diffs__section-title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+}
+
+.diffs__timeline {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(77, 166, 255, 0.1);
+}
+
+.diffs__entry {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.diffs__entry-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+  margin-left: -1.3rem;
+}
+
+.diffs__entry-content {
+  flex: 1;
+}
+
+.diffs__entry-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  margin-bottom: 0.15rem;
+}
+
+.diffs__entry-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.diffs__footer {
+  margin-top: 3rem;
+}
+
+.diffs__grid {
+  max-width: 800px;
+}
+</style>
