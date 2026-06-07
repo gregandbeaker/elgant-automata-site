@@ -1,0 +1,176 @@
+---
+// Core Components
+---
+
+<section class="components" id="components">
+  <div class="container">
+    <h2><span class="text-accent">##</span> Core Components</h2>
+    <p class="text-dim">The engines that power the machine. Each one a self-contained module in the signal chain.</p>
+
+    <!-- The Central Scrutinizer -->
+    <div class="comp-card">
+      <div class="comp-card__header">
+        <span class="comp-card__icon">👁️</span>
+        <h3>The Central Scrutinizer</h3>
+        <span class="badge badge--initiated">● ACTIVE</span>
+      </div>
+      <div class="comp-card__body">
+        <p>
+          A tiny quantized local LLM (~1–3B params) running on a detached control-rate thread (~100 Hz) 
+          that injects high-level, non-repetitive creativity into the audio stream. 
+          Reads system telemetry and user directives, outputs patching commands parsed into CV values, 
+          generative spoken-word narration, and non-diatonic chord substitutions.
+        </p>
+        <div class="comp-card__specs">
+          <span class="comp-spec"><code>llama.cpp</code> locally</span>
+          <span class="comp-spec">100 Hz control rate</span>
+          <span class="comp-spec"><code>&lt; 50 ms</code> latency</span>
+          <span class="comp-spec">TTS + vocoder output</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SyBorg -->
+    <div class="comp-card">
+      <div class="comp-card__header">
+        <span class="comp-card__icon">🎸</span>
+        <h3>SyBorg — The Zappa Instant Composition Engine</h3>
+        <span class="badge badge--initiated">● ACTIVE</span>
+      </div>
+      <div class="comp-card__body">
+        <p>
+          Real-time chromatic guitar solo generator using <strong>Xenochrony</strong> — metric-phasing 
+          between a backing clock (120 BPM, 4/4) and a solo clock (94 BPM, 11/8). 
+          Irrational tuplets, microtonal pitch bends, and hard-cut tape edits at runtime.
+        </p>
+        <div class="comp-card__specs">
+          <code>--eyebrows 0.8</code>
+          <code>--lets-be-serious 0.4</code>
+          <code>--imaginary-notes 0.3</code>
+          <code>--marital-aids 0.2</code>
+          <code>--scrutinize</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- FTRT Architecture -->
+    <div class="comp-card">
+      <div class="comp-card__header">
+        <span class="comp-card__icon">🕐</span>
+        <h3>FTRT Look-Ahead Architecture</h3>
+        <span class="badge badge--initiated">● ACTIVE</span>
+      </div>
+      <div class="comp-card__body">
+        <p>
+          Future-Time Real-Time architecture with a 4-bar look-ahead buffer (~4 sec at 120 BPM). 
+          Separates <strong>composition</strong> (FTRT, ahead of playback), 
+          <strong>control</strong> (The Central Scrutinizer at ~100 Hz), 
+          and <strong>audio rendering</strong> (at sample rate, hard real-time).
+        </p>
+        <p class="text-dim">
+          Predictive filter sweeps, anticipatory decrescendos, and xenochronic phase alignments — 
+          all calculated 2.5 seconds before the audio hits the DAC.
+        </p>
+      </div>
+    </div>
+
+    <!-- Style Extraction -->
+    <div class="comp-card">
+      <div class="comp-card__header">
+        <span class="comp-card__icon">🎯</span>
+        <h3>Style Extraction Pipeline</h3>
+        <span class="badge badge--initiated">● ACTIVE</span>
+      </div>
+      <div class="comp-card__body">
+        <p>
+          Quantifies a performer's expressive DNA into measurable probabilistic decision vectors — 
+          groove profile, velocity distribution, ghost note density map, fill vocabulary — 
+          stored as portable JSON style models that the Scrutinizer queries at runtime.
+        </p>
+        <div class="comp-card__specs">
+          <span class="comp-spec">Velocity profiles</span>
+          <span class="comp-spec">Ghost note maps</span>
+          <span class="comp-spec">Groove quantization</span>
+          <span class="comp-spec">Portable JSON models</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logic Pro Bridge -->
+    <div class="comp-card">
+      <div class="comp-card__header">
+        <span class="comp-card__icon">🔌</span>
+        <h3>Logic Pro IAC Bridge</h3>
+        <span class="badge badge--initiated">● ACTIVE</span>
+      </div>
+      <div class="comp-card__body">
+        <p>
+          MIDI-over-IAC integration that routes EA's Python composition engine directly into Logic Pro — 
+          controlling Drum Kit Designer, Alchemy, and Native Instruments plugins. 
+          Share a <code>.logicx</code> file instead of source code. Open and play.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .components {
+    padding: 4rem 0;
+  }
+
+  .comp-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
+  }
+
+  .comp-card:hover {
+    border-color: var(--color-border-hover);
+  }
+
+  .comp-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-elevated);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .comp-card__icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .comp-card__header h3 {
+    margin: 0;
+    font-size: var(--font-size-base);
+    flex: 1;
+  }
+
+  .comp-card__body {
+    padding: 1.25rem;
+  }
+
+  .comp-card__body p {
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+  }
+
+  .comp-card__specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .comp-card__specs code,
+  .comp-spec {
+    font-size: 0.75rem;
+    padding: 0.125em 0.5em;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dim);
+  }
+</style>

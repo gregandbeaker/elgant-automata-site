@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "EXP-01",
+      "name": "The Album Generator",
+      "type": "Experiment",
+      "status": "initiated",
+      "stack": "Python DSP, Web Audio, Multi-Voice DAG",
+      "link": "08_Ideation/Project Idea Tracker#EXP-01: The Album Generator",
+      "detail": {
+        "id": "EXP-01",
+        "title": "The Album Generator",
+        "subtitle": "A Tunable, Continuous Music Stream in the Style of a Fully Orchestrated Studio Album",
+        "description": "Standard commercial streaming platforms (like Spotify) treat music like a collection of flat, pre-rendered, 3-minute audio files designed for people with short attention spans."
+      }
+    },
+    {
+      "id": "EXP-02",
+      "name": "Elegant Automata",
+      "type": "AI Modular Synth",
+      "status": "planned",
+      "stack": "NumPy, Sounddevice, RL Agents",
+      "link": "00_META/Project Idea Tracker.md"
+    },
+    {
+      "id": "EXP-03",
+      "name": "SyBorg",
+      "type": "Experiment",
+      "status": "initiated",
+      "stack": "Xenochronic Clocks, Lydian Vamps, Synth Leads",
+      "link": "08_Ideation/Project Idea Tracker#EXP-03: SyBorg",
+      "detail": {
+        "id": "EXP-03",
+        "title": "SyBorg (The Zappa Instant Composition Engine)",
+        "subtitle": "A Tunable Module Generating Real-Time Chromatic Guitar Solos Over Metric-Divergent Backing Vamps",
+        "description": "SyBorg (referencing the infamous, government-sanctioned robotic companion from *Joe's Garage*) is our dedicated Frank Zappa-style guitar solo generator. It doesn't play pre-recorded riffs—it uses cybernetic Xenochrony and irrational metric subdivisions to physically \"sculpt\" a lead melody in real-time on top of a steady, looping backing band."
+      }
+    },
+    {
+      "id": "DISC-01",
+      "name": "The Central Scrutinizer",
+      "type": "Discovery",
+      "status": "initiated",
+      "stack": "Local Quantized LLM, TTS, Semantic Patching",
+      "link": "08_Ideation/Project Idea Tracker#DISC-01: The Central Scrutinizer",
+      "detail": {
+        "id": "DISC-01",
+        "title": "The Central Scrutinizer",
+        "subtitle": "A Local, Low-Overhead Quantized LLM Modulator Driving Improvisational Patch Routings & Satirical Vocal Synthesis",
+        "description": "The Central Scrutinizer is a discovery project investigating how a tiny, quantized local LLM (typically a 1-Billion to 3-Billion parameter model, such as *Qwen-1.5B-Instruct-GGUF* or *Llama-3-1B* running offline on your local CPU) can inject high-level, organic, and non-repetitive creativity into our generated music stream."
+      }
+    },
+    {
+      "id": "EXP-04",
+      "name": "Logic Pro IAC Bridge",
+      "type": "Integration",
+      "status": "initiated",
+      "stack": "mido, IAC Driver, Logic Pro, EA Python",
+      "link": "00_META/Logic Path A Project"
+    }
+  ],
+  "extracted_at": "2026-06-07T20:14:53.826Z",
+  "vault_path": "/Users/gregevans/Library/Mobile Documents/iCloud~md~obsidian/Documents/Elegant Automata"
+}

@@ -1,0 +1,25 @@
+---
+// Terminal Window component — the signature aesthetic
+interface Props {
+  title?: string;
+  prompt?: string;
+  class?: string;
+}
+
+const { title, prompt, class: className } = Astro.props;
+---
+
+<div class="terminal-window {className || ''}">
+  <div class="terminal-window__bar">
+    <div class="terminal-window__dots">
+      <span class="terminal-window__dot terminal-window__dot--red"></span>
+      <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+      <span class="terminal-window__dot terminal-window__dot--green"></span>
+    </div>
+    {title || 'terminal'}
+  </div>
+  <div class="terminal-window__body">
+    {prompt && <span class="terminal-window__prompt">{prompt}</span>}
+    <slot />
+  </div>
+</div>

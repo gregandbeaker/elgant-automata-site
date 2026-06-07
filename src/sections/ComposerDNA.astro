@@ -1,0 +1,153 @@
+---
+// Composer DNA Engines
+---
+
+<section class="composers" id="composers">
+  <div class="container">
+    <h2><span class="text-accent">##</span> Composer DNA Engines</h2>
+    <p class="text-dim">Parametric state machines modeled on the masters. Not samples — structural logic.</p>
+
+    <div class="composer-grid">
+      <div class="composer-card">
+        <div class="composer-card__header">
+          <span class="composer-card__era text-accent">1685–1750</span>
+          <h3>Bach</h3>
+        </div>
+        <div class="composer-card__body">
+          <p class="text-dim">Canonic delay matrices, Werckmeister III microtuning, contrapuntal voice routing with strict species counterpoint rules.</p>
+          <div class="composer-card__tags">
+            <code>Canon</code>
+            <code>Counterpoint</code>
+            <code>Werckmeister</code>
+            <code>Fugue</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-card">
+        <div class="composer-card__header">
+          <span class="composer-card__era text-accent">1770–1827</span>
+          <h3>Beethoven</h3>
+        </div>
+        <div class="composer-card__body">
+          <p class="text-dim">Continuous state machines (Op. 131), explosive germ-motif development, metric subdivision engines, quartet voice allocation.</p>
+          <div class="composer-card__tags">
+            <code>State Machine</code>
+            <code>Motivic Development</code>
+            <code>Quartet Routing</code>
+            <code>12/32 Subdiv</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-card">
+        <div class="composer-card__header">
+          <span class="composer-card__era text-accent">1940–1993</span>
+          <h3>Zappa</h3>
+        </div>
+        <div class="composer-card__body">
+          <p class="text-dim">Xenochrony, irrational tuplets (11:8, 7:5), hard-cut tape edits, Lydian chromatic vamps, plastic-megaphone narration.</p>
+          <div class="composer-card__tags">
+            <code>Xenochrony</code>
+            <code>Irrational Tuplets</code>
+            <code>Hard Splice</code>
+            <code>Lydian</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-card">
+        <div class="composer-card__header">
+          <span class="composer-card__era text-accent">1941–2021</span>
+          <h3>Chick Corea</h3>
+        </div>
+        <div class="composer-card__body">
+          <p class="text-dim">2:3 clave offsets, ring-modulated Rhodes voicings, montuno pattern generation, Latin-jazz fusion comping vocabulary.</p>
+          <div class="composer-card__tags">
+            <code>Clave</code>
+            <code>Ring Mod</code>
+            <code>Montuno</code>
+            <code>Rhodes</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="composer-card">
+        <div class="composer-card__header">
+          <span class="composer-card__era text-accent">1926–1967</span>
+          <h3>Coltrane</h3>
+        </div>
+        <div class="composer-card__body">
+          <p class="text-dim">Giant Steps harmonic cycles, chromatic third relations, sheets of sound density control, modal-to-chromatic transition mapping.</p>
+          <div class="composer-card__tags">
+            <code>Giant Steps</code>
+            <code>Chromatic Thirds</code>
+            <code>Sheets of Sound</code>
+            <code>Modal</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .composers {
+    padding: 4rem 0;
+  }
+
+  .composer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .composer-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  .composer-card:hover {
+    border-color: var(--color-accent-dim);
+  }
+
+  .composer-card__header {
+    padding: 1rem 1.25rem 0.5rem;
+  }
+
+  .composer-card__era {
+    font-size: 0.6875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .composer-card__header h3 {
+    margin: 0.25rem 0 0;
+    font-size: var(--font-size-lg);
+  }
+
+  .composer-card__body {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .composer-card__body p {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .composer-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .composer-card__tags code {
+    font-size: 0.6875rem;
+    padding: 0.125em 0.375em;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dim);
+  }
+</style>

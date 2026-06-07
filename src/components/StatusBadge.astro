@@ -1,0 +1,23 @@
+---
+// Status badge for project tracker
+interface Props {
+  status: 'initiated' | 'planned' | 'pending' | 'active' | 'complete';
+}
+
+const labels: Record<string, string> = {
+  initiated: 'INITIATED',
+  planned: 'PLANNED',
+  pending: 'PENDING',
+  active: 'ACTIVE',
+  complete: 'COMPLETE',
+};
+
+const { status } = Astro.props;
+---
+
+<span class="badge badge--{status}" role="status">
+  {status === 'initiated' && '● '}
+  {status === 'planned' && '○ '}
+  {status === 'active' && '▶ '}
+  {labels[status]}
+</span>

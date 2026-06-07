@@ -1,0 +1,125 @@
+---
+// ── Base Layout: Terminal Chic ──
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description || 'Elegant Automata — Autonomous AI-driven modular music engine. Real-time generative composition, style-aware groove engines, and a local LLM that composes what no static sequence could.'}>
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <title>{title} | Elegant Automata</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style is:global>
+    @import '/src/styles/global.css';
+  </style>
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+  
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="site-logo">
+        <span class="text-accent">▸</span> elegant_automata/
+      </a>
+      <nav class="site-nav">
+        <a href="/#what">what</a>
+        <a href="/#components">components</a>
+        <a href="/#tracker">tracker</a>
+        <a href="/#composers">composers</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <hr class="section-divider">
+      <p class="text-dim" style="text-align: center; font-size: var(--font-size-sm);">
+        Elegant Automata · <span class="text-green">autos</span> + <span class="text-accent">matos</span> · Wire it up your damn self.<br>
+        Built in Joe's Garage. No puppet strings attached.
+      </p>
+    </div>
+  </footer>
+
+  <style>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.75rem 0;
+    }
+
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-logo {
+      font-weight: 700;
+      font-size: var(--font-size-lg);
+      color: var(--color-text-bright);
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    .site-logo:hover {
+      color: var(--color-accent);
+    }
+
+    .site-nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .site-nav a {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-dim);
+      text-decoration: none;
+      border-bottom: none;
+      letter-spacing: 0.03em;
+    }
+
+    .site-nav a:hover {
+      color: var(--color-accent);
+    }
+
+    .site-footer {
+      padding: 2rem 0 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .site-nav {
+        gap: 1rem;
+      }
+      .site-nav a {
+        font-size: 0.75rem;
+      }
+      .site-logo {
+        font-size: var(--font-size-base);
+      }
+    }
+  </style>
+</body>
+</html>

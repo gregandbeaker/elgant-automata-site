@@ -1,0 +1,132 @@
+---
+// Project Tracker — data pulled from Obsidian vault at build time
+import projectsData from '../data/projects.json';
+
+interface Project {
+  id: string;
+  name: string;
+  type: string;
+  status: string;
+  stack: string;
+  link: string;
+  detail?: {
+    id: string;
+    title: string;
+    subtitle: string;
+    description: string;
+  };
+}
+
+const data = projectsData as { projects: Project[]; extracted_at: string };
+const projects = data.projects;
+const extractedAt = data.extracted_at;
+
+const statusLabel: Record<string, string> = {
+  initiated: '● INITIATED',
+  planned: '○ PLANNED',
+  active: '▶ ACTIVE',
+  blocked: '■ BLOCKED',
+  complete: '✓ COMPLETE',
+  pending: '□ PENDING',
+};
+---
+
+<section class="tracker" id="tracker">
+  <div class="container">
+    <h2><span class="text-accent">##</span> Project Tracker</h2>
+    <p class="text-dim">Active experiments. Each one a distinct mutation of music, science, or automation.</p>
+
+    <div class="tracker-table-wrap">
+      <table class="tracker-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Project</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Stack</th>
+          </tr>
+        </thead>
+        <tbody>
+          {projects.map((p) => (
+            <tr>
+              <td class="tracker-id"><code>{p.id}</code></td>
+              <td>
+                <strong>{p.name}</strong>
+                {p.detail?.subtitle && (
+                  <br /><span class="text-dim" style="font-size: 0.75rem;">{p.detail.subtitle}</span>
+                )}
+              </td>
+              <td class="text-dim">{p.type}</td>
+              <td>
+                <span class={`badge badge--${p.status}`}>{statusLabel[p.status] || statusLabel.pending}</span>
+              </td>
+              <td class="text-dim">{p.stack}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tracker-note">
+      <p class="text-dim" style="font-size: 0.75rem;">
+        <span class="text-accent">⟳</span> Extracted from the Obsidian vault{" "}
+        {extractedAt && (
+          <span>
+            on{" "}
+            {new Date(extractedAt).toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+              hour: 'numeric',
+              minute: '2-digit',
+              timeZoneName: 'short',
+            })}
+          </span>
+        )}
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tracker {
+    padding: 4rem 0;
+  }
+
+  .tracker-table-wrap {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .tracker-table {
+    margin-bottom: 0;
+    font-size: 0.8125rem;
+  }
+
+  .tracker-table thead {
+    background: var(--color-bg-surface);
+  }
+
+  .tracker-table th {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.6875rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tracker-table td {
+    padding: 0.75rem 0.875rem;
+    vertical-align: middle;
+  }
+
+  .tracker-id code {
+    font-size: 0.6875rem;
+    color: var(--color-accent);
+  }
+
+  .tracker-note {
+    margin-top: 1rem;
+    text-align: right;
+  }
+</style>
