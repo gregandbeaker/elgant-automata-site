@@ -1,0 +1,212 @@
+---
+// src/pages/tags/[tag].astro
+import Layout from '../../layouts/Layout.astro';
+import canonData from '../../data/canon.json';
+
+interface CanonFile {
+  path: string;
+  title: string;
+  subtitle?: string;
+  section: string;
+  size_bytes: number;
+  modified: string;
+  word_count: number;
+  excerpt: string;
+  tags: string[];
+  is_index: boolean;
+}
+
+interface CanonResult {
+  files: CanonFile[];
+  total_files: number;
+  total_words: number;
+  sections: string[];
+  extracted_at: string;
+  vault_path: string;
+}
+
+export async function getStaticPaths() {
+  const data = canonData as CanonResult;
+  
+  // 1. Extract all unique tags
+  const allTags = new Set<string>();
+  data.files.forEach(file => {
+    if (file.tags) {
+      file.tags.forEach((tag: string) => allTags.add(tag));
+    }
+  });
+
+  // 2. Generate path parameters for each tag
+  return Array.from(allTags).map(tag => {
+    const filteredFiles = data.files.filter(file => file.tags && file.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { files: filteredFiles }
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { files } = Astro.props;
+
+function fmtBytes(b: number): string {
+  if (b < 1024) return `${b}B`;
+  const kb = b / 1024;
+  if (kb < 1024) return `${kb.toFixed(1)}KB`;
+  return `${(kb / 1024).toFixed(1)}MB`;
+}
+
+function daysAgo(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  if (days === 0) return 'today';
+  if (days === 1) return 'yesterday';
+  return `${days}d ago`;
+}
+---
+
+<Layout
+  title={`Tag: #${tag}`}
+  description={`Browse all Elegant Automata research files tagged with #${tag}`}
+>
+  <section class="tag-hub">
+    <div class="container">
+      <div class="breadcrumbs text-dim">
+        <a href="/canon">canon</a> / <a href="/tags">tags</a> / <span class="text-accent">#{tag}</span>
+      </div>
+
+      <h1 class="section-title">
+        <span class="text-accent">#</span>{tag}
+      </h1>
+
+      <p class="tag-hub__meta text-dim">
+        Found <span class="text-green">{files.length}</span> resonant node(s) in the mesh tagged with <span class="text-accent">#{tag}</span>.
+      </p>
+
+      <div class="tag-hub__grid">
+        {files.map(file => (
+          <a href={`/canon/${file.path.replace(/\.md$/, '')}`} class="canon__card">
+            <div class="canon__card-header">
+              <span class="canon__card-icon">{file.is_index ? '📑' : '📄'}</span>
+              <span class="canon__card-title">{file.title}</span>
+            </div>
+            {file.subtitle && (
+              <p class="canon__card-subtitle text-dim">{file.subtitle}</p>
+            )}
+            <p class="canon__card-excerpt text-dim">{file.excerpt.slice(0, 140)}</p>
+            <div class="canon__card-meta">
+              <span>{fmtBytes(file.size_bytes)}</span>
+              <span>·</span>
+              <span>{file.word_count.toLocaleString()} words</span>
+              <span>·</span>
+              <span class="text-accent">{daysAgo(file.modified)}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="tag-hub__footer">
+        <a href="/tags" class="text-accent">← Return to Tag Index</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.tag-hub {
+  padding: 4rem 0;
+}
+
+.breadcrumbs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-text-dim);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag-hub__meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.tag-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+}
+
+.canon__card {
+  display: block;
+  background: rgba(77, 166, 255, 0.03);
+  border: 1px solid rgba(77, 166, 255, 0.08);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.canon__card:hover {
+  border-color: rgba(77, 166, 255, 0.25);
+  background: rgba(77, 166, 255, 0.06);
+}
+
+.canon__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.canon__card-icon {
+  font-size: 0.9rem;
+}
+
+.canon__card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.canon__card-subtitle {
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.canon__card-excerpt {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.canon__card-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--color-text-dim);
+}
+
+.tag-hub__footer {
+  margin-top: 3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+</style>

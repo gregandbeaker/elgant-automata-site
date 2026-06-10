@@ -1,0 +1,264 @@
+{
+  "date": "2026-06-08",
+  "files": [
+    {
+      "path": "00_META/DAILY_DIFFS/diff - 06-08-2026.md",
+      "title": "Untitled",
+      "size_bytes": 1603,
+      "modified": "2026-06-08T11:49:08.225Z"
+    },
+    {
+      "path": "00_META/Logic Path A Project.md",
+      "title": "🚀 EXP-04: Logic Pro IAC Bridge — EA Control Layer",
+      "size_bytes": 9939,
+      "modified": "2026-06-07T19:06:39.000Z"
+    },
+    {
+      "path": "00_META/Project Idea Tracker.md",
+      "title": "🎛️ Project Idea Tracker",
+      "size_bytes": 18520,
+      "modified": "2026-06-07T19:05:05.000Z"
+    },
+    {
+      "path": "00_META/Story arch.md",
+      "title": "Untitled",
+      "size_bytes": 2353,
+      "modified": "2026-06-05T12:57:20.000Z"
+    },
+    {
+      "path": "00_META/Vision and mission statement.md",
+      "title": "Untitled",
+      "size_bytes": 2132,
+      "modified": "2026-06-05T13:00:29.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Logic Pro Integration.md",
+      "title": "🎛️ Elegant Automata as Logic Pro Plugins — Feasibility Analysis",
+      "size_bytes": 16243,
+      "modified": "2026-06-07T19:00:55.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "size_bytes": 6445,
+      "modified": "2026-06-07T12:17:07.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Synthesis vs Sampling.md",
+      "title": "🎛️ Synthesis vs. Sampling — Architectural Analysis for Elegant Automata",
+      "size_bytes": 12494,
+      "modified": "2026-06-07T18:53:12.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/coding_standards.md",
+      "title": "🔬 Real-Time DSP Coding Standards & Best Practices",
+      "size_bytes": 10553,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/high_fidelity_dsp.md",
+      "title": "🎛️ High-Fidelity DSP & Studio-Grade Audio Engineering",
+      "size_bytes": 8513,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/look_ahead_architecture.md",
+      "title": "🎛️ Faster-Than-Real-Time (FTRT) Look-Ahead Architecture",
+      "size_bytes": 7837,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Knowledge Base Mind Map.md",
+      "title": "🧠 Elegant Automata — Knowledge Base Mind Map",
+      "size_bytes": 5537,
+      "modified": "2026-06-07T16:29:06.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Music Datasets.md",
+      "title": "📚 Music Datasets for LLM Fine-Tuning & Style Extraction",
+      "size_bytes": 13338,
+      "modified": "2026-06-07T15:53:44.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "size_bytes": 6445,
+      "modified": "2026-06-07T12:17:14.000Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/style_extraction_process.md",
+      "title": "🎯 Musician Style Extraction & Quantification for Elegant Automata",
+      "size_bytes": 22543,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/_index.md",
+      "title": "🎼 Ludwig van Beethoven",
+      "size_bytes": 704,
+      "modified": "2026-06-08T11:56:09.017Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven piano sonatas.md",
+      "title": "🎹 Technical Composers Analysis: Ludwig van Beethoven",
+      "size_bytes": 9983,
+      "modified": "2026-06-08T10:59:49.238Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven_canon.md",
+      "title": "🎼 Ludwig van Beethoven's Entire Canon: The Unified System Architecture",
+      "size_bytes": 8200,
+      "modified": "2026-06-08T10:59:49.213Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven_quartets.md",
+      "title": "🎻 Technical Composers Analysis: Beethoven's String Quartets",
+      "size_bytes": 11979,
+      "modified": "2026-06-08T10:59:49.214Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/_index.md",
+      "title": "🎹 Classical Composers",
+      "size_bytes": 1196,
+      "modified": "2026-06-08T11:56:09.010Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/bach.md",
+      "title": "🎹 Technical Composers Analysis: Johann Sebastian Bach",
+      "size_bytes": 9250,
+      "modified": "2026-06-08T10:59:49.211Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/bartok.md",
+      "title": "🎹 Technical Composers Analysis: Béla Bartók",
+      "size_bytes": 13344,
+      "modified": "2026-06-08T10:59:49.231Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/debussy.md",
+      "title": "🎹 Technical Composers Analysis: Claude Debussy",
+      "size_bytes": 12835,
+      "modified": "2026-06-08T10:59:49.237Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/ligeti.md",
+      "title": "🎹 Technical Composers Analysis: György Ligeti",
+      "size_bytes": 13733,
+      "modified": "2026-06-08T10:59:49.242Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/messiaen.md",
+      "title": "🎹 Technical Composers Analysis: Olivier Messiaen",
+      "size_bytes": 13238,
+      "modified": "2026-06-08T10:59:49.235Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/nancarrow.md",
+      "title": "🎹 Technical Composers Analysis: Conlon Nancarrow",
+      "size_bytes": 11981,
+      "modified": "2026-06-08T10:59:49.245Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/reich.md",
+      "title": "🎹 Technical Composers Analysis: Steve Reich",
+      "size_bytes": 12774,
+      "modified": "2026-06-08T10:59:49.221Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/stockhausen.md",
+      "title": "🎹 Technical Composers Analysis: Karlheinz Stockhausen",
+      "size_bytes": 13998,
+      "modified": "2026-06-08T10:59:49.243Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/GENRES/_index.md",
+      "title": "🎵 Genres",
+      "size_bytes": 280,
+      "modified": "2026-06-08T11:56:09.020Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/INSTRUMENTS/_index.md",
+      "title": "🎻 Instruments",
+      "size_bytes": 308,
+      "modified": "2026-06-08T11:56:09.001Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/JAZZ COMPOSERS/_index.md",
+      "title": "🎷 Jazz Composers",
+      "size_bytes": 445,
+      "modified": "2026-06-08T12:06:32.998Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/JAZZ COMPOSERS/miles_davis.md",
+      "title": "🎺 Miles Davis: The Algorithmic Reinventor",
+      "size_bytes": 24223,
+      "modified": "2026-06-08T12:06:23.142Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/_index.md",
+      "title": "🎧 Recordings",
+      "size_bytes": 289,
+      "modified": "2026-06-08T11:56:09.001Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/_index.md",
+      "title": "🎼 Music Studies",
+      "size_bytes": 1407,
+      "modified": "2026-06-08T11:56:09.024Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/composers.md",
+      "title": "🎼 Technical Composers Analysis: Zappa & Stravinsky",
+      "size_bytes": 6693,
+      "modified": "2026-06-07T12:10:35.000Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/stravinsky.md",
+      "title": "🎹 Technical Composers Analysis: Igor Stravinsky",
+      "size_bytes": 12711,
+      "modified": "2026-06-08T10:59:49.225Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/chick_corea.md",
+      "title": "🎹 Technical Composers Analysis: Chick Corea & His Ensembles",
+      "size_bytes": 9759,
+      "modified": "2026-06-08T10:59:49.215Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/j_dilla.md",
+      "title": "🎹 Technical Composers Analysis: J Dilla",
+      "size_bytes": 13845,
+      "modified": "2026-06-08T10:54:23.024Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/jazz_albums.md",
+      "title": "🎷 The 10 Most Influential American Jazz Albums: A Technical Audit",
+      "size_bytes": 8640,
+      "modified": "2026-06-08T10:59:49.218Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/miles_davis.md",
+      "title": "🎹 Technical Composers Analysis: Miles Davis (Electric Period)",
+      "size_bytes": 13227,
+      "modified": "2026-06-08T10:54:23.049Z"
+    },
+    {
+      "path": "06_Guitar_Solos_&_Xenochrony/zappa_solos.md",
+      "title": "🎸 The Frank Zappa Guitar Solos: An Analytical Transcription Audit",
+      "size_bytes": 10487,
+      "modified": "2026-06-08T10:59:49.220Z"
+    },
+    {
+      "path": "Elegant Automata.md",
+      "title": "🎛️ Elegant Automata",
+      "size_bytes": 5935,
+      "modified": "2026-06-08T10:59:49.184Z"
+    },
+    {
+      "path": "Structure.md",
+      "title": "Untitled",
+      "size_bytes": 739,
+      "modified": "2026-06-07T16:58:15.000Z"
+    }
+  ],
+  "change_summary": "(git history unavailable in this build context)"
+}

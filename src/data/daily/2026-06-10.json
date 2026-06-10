@@ -1,0 +1,408 @@
+{
+  "date": "2026-06-10",
+  "files": [
+    {
+      "path": "00_META/DAILY_DIFFS/diff - 06-08-2026.md",
+      "title": "Untitled",
+      "size_bytes": 1810,
+      "modified": "2026-06-09T20:35:40.407Z"
+    },
+    {
+      "path": "00_META/DAILY_DIFFS/diff - 06-09-2026.md",
+      "title": "Untitled",
+      "size_bytes": 254,
+      "modified": "2026-06-10T02:09:35.338Z"
+    },
+    {
+      "path": "00_META/DAILY_DIFFS/diff - 6-10-2026.md",
+      "title": "Untitled",
+      "size_bytes": 206,
+      "modified": "2026-06-10T09:54:11.169Z"
+    },
+    {
+      "path": "00_META/EA Vault Audit Report.md",
+      "title": "🏛️ Elegant Automata Vault — v2.0 Audit Report",
+      "size_bytes": 5853,
+      "modified": "2026-06-10T08:58:38.852Z"
+    },
+    {
+      "path": "00_META/Logic Path A Project.md",
+      "title": "🚀 EXP-04: Logic Pro IAC Bridge — EA Control Layer",
+      "size_bytes": 9679,
+      "modified": "2026-06-09T20:37:49.129Z"
+    },
+    {
+      "path": "00_META/Project Idea Tracker.md",
+      "title": "🎛️ Project Idea Tracker",
+      "size_bytes": 18725,
+      "modified": "2026-06-09T20:31:31.172Z"
+    },
+    {
+      "path": "00_META/Story arch.md",
+      "title": "Untitled",
+      "size_bytes": 2516,
+      "modified": "2026-06-09T20:31:31.111Z"
+    },
+    {
+      "path": "00_META/Tag Mesh Audit Report.md",
+      "title": "🏷️ Tag Mesh Audit Report — Elegant Automata Vault v1.0",
+      "size_bytes": 11995,
+      "modified": "2026-06-10T10:24:35.981Z"
+    },
+    {
+      "path": "00_META/Vision and mission statement.md",
+      "title": "Untitled",
+      "size_bytes": 2309,
+      "modified": "2026-06-09T20:31:31.132Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Beginner Case Guide.md",
+      "title": "🎛️ Eurorack Modular Synthesis — Beginner Case Guide",
+      "size_bytes": 14659,
+      "modified": "2026-06-10T01:07:53.735Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Beginner Purchasing Guide.md",
+      "title": "🎛️ Eurorack Purchasing Guide — Budget-Friendly Hardware Solutions",
+      "size_bytes": 10897,
+      "modified": "2026-06-10T01:07:29.841Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Deep Dive.md",
+      "title": "🎛️ Eurorack Modular Synthesis — Cultural, Electronic, and Compositional Systems",
+      "size_bytes": 33926,
+      "modified": "2026-06-10T01:35:56.300Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Software Bridge Guide.md",
+      "title": "🎛️ Eurorack Software-to-Hardware Bridge — Interface and Telemetry Guide",
+      "size_bytes": 16563,
+      "modified": "2026-06-10T01:35:48.959Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Logic Pro Integration.md",
+      "title": "🎛️ Elegant Automata as Logic Pro Plugins — Feasibility Analysis",
+      "size_bytes": 16852,
+      "modified": "2026-06-09T20:31:06.298Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Modular Programming and AI SOTA - Deep Dive.md",
+      "title": "🎛️ Modular Software Architectures & AI SOTA — Technical Deep Dive",
+      "size_bytes": 24234,
+      "modified": "2026-06-10T01:15:14.132Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "size_bytes": 6665,
+      "modified": "2026-06-09T20:31:06.277Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Synthesis vs Sampling.md",
+      "title": "🎛️ Synthesis vs. Sampling — Architectural Analysis for Elegant Automata",
+      "size_bytes": 12987,
+      "modified": "2026-06-10T00:52:47.379Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/coding_standards.md",
+      "title": "🔬 Real-Time DSP Coding Standards & Best Practices",
+      "size_bytes": 10761,
+      "modified": "2026-06-09T20:31:06.271Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/high_fidelity_dsp.md",
+      "title": "🎛️ High-Fidelity DSP & Studio-Grade Audio Engineering",
+      "size_bytes": 7689,
+      "modified": "2026-06-09T20:37:49.128Z"
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/look_ahead_architecture.md",
+      "title": "🎛️ Faster-Than-Real-Time (FTRT) Look-Ahead Architecture",
+      "size_bytes": 6512,
+      "modified": "2026-06-10T00:52:57.106Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Knowledge Base Mind Map.md",
+      "title": "🧠 Elegant Automata — Knowledge Base Mind Map",
+      "size_bytes": 5737,
+      "modified": "2026-06-09T20:31:17.271Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Music Datasets.md",
+      "title": "📚 Music Datasets for LLM Fine-Tuning & Style Extraction",
+      "size_bytes": 13587,
+      "modified": "2026-06-09T20:31:17.292Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/Subtopics.md",
+      "title": "🔬 Scientific Subtopics Research: Elegant Automata",
+      "size_bytes": 6626,
+      "modified": "2026-06-09T20:31:17.277Z"
+    },
+    {
+      "path": "02_Style_Extraction_&_Analysis/style_extraction_process.md",
+      "title": "🎯 Musician Style Extraction & Quantification for Elegant Automata",
+      "size_bytes": 20430,
+      "modified": "2026-06-09T20:37:30.776Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/_index.md",
+      "title": "🎼 Ludwig van Beethoven",
+      "size_bytes": 855,
+      "modified": "2026-06-09T20:29:22.435Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven piano sonatas.md",
+      "title": "🎹 Technical Composers Analysis: Ludwig van Beethoven",
+      "size_bytes": 10166,
+      "modified": "2026-06-09T20:30:57.679Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven_canon.md",
+      "title": "🎼 Ludwig van Beethoven's Entire Canon: The Unified System Architecture",
+      "size_bytes": 8383,
+      "modified": "2026-06-09T20:31:11.951Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven_quartets.md",
+      "title": "🎻 Technical Composers Analysis: Beethoven's String Quartets",
+      "size_bytes": 12169,
+      "modified": "2026-06-09T20:31:12.006Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/_index.md",
+      "title": "🎹 Classical Composers",
+      "size_bytes": 1425,
+      "modified": "2026-06-09T20:29:22.428Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/bach.md",
+      "title": "🎹 Technical Composers Analysis: Johann Sebastian Bach",
+      "size_bytes": 9424,
+      "modified": "2026-06-09T20:30:32.471Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/bartok.md",
+      "title": "🎹 Technical Composers Analysis: Béla Bartók",
+      "size_bytes": 13505,
+      "modified": "2026-06-09T20:30:32.469Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/debussy.md",
+      "title": "🎹 Technical Composers Analysis: Claude Debussy",
+      "size_bytes": 12997,
+      "modified": "2026-06-09T20:30:32.474Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/ligeti.md",
+      "title": "🎹 Technical Composers Analysis: György Ligeti",
+      "size_bytes": 13895,
+      "modified": "2026-06-09T20:30:43.971Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/messiaen.md",
+      "title": "🎹 Technical Composers Analysis: Olivier Messiaen",
+      "size_bytes": 13396,
+      "modified": "2026-06-09T20:30:43.987Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/nancarrow.md",
+      "title": "🎹 Technical Composers Analysis: Conlon Nancarrow",
+      "size_bytes": 12141,
+      "modified": "2026-06-09T20:30:43.946Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/reich.md",
+      "title": "🎹 Technical Composers Analysis: Steve Reich",
+      "size_bytes": 12932,
+      "modified": "2026-06-09T20:30:57.689Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/stockhausen.md",
+      "title": "🎹 Technical Composers Analysis: Karlheinz Stockhausen",
+      "size_bytes": 14162,
+      "modified": "2026-06-09T20:30:57.695Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/GENRES/_index.md",
+      "title": "🎵 Genres",
+      "size_bytes": 340,
+      "modified": "2026-06-09T20:35:40.476Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/INSTRUMENTS/_index.md",
+      "title": "🎻 Instruments",
+      "size_bytes": 368,
+      "modified": "2026-06-09T20:35:40.444Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/JAZZ COMPOSERS/_index.md",
+      "title": "🎷 Jazz Composers",
+      "size_bytes": 513,
+      "modified": "2026-06-09T20:35:40.480Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/JAZZ COMPOSERS/miles_davis.md",
+      "title": "🎺 Miles Davis: The Algorithmic Reinventor",
+      "size_bytes": 23902,
+      "modified": "2026-06-09T20:35:40.433Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/Modular Culture and Movements.md",
+      "title": "🎛️ The Human Side of Modular — Culture, Movements, and Performative Lineages",
+      "size_bytes": 24076,
+      "modified": "2026-06-10T01:46:40.030Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Geogaddi.md",
+      "title": "📀 Geogaddi (2002 LP)",
+      "size_bytes": 3398,
+      "modified": "2026-06-09T22:19:29.012Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Hi Scores.md",
+      "title": "📀 Hi Scores (1996 EP)",
+      "size_bytes": 2484,
+      "modified": "2026-06-09T22:19:29.011Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/In a Beautiful Place Out in the Country.md",
+      "title": "📀 In a Beautiful Place Out in the Country (2000 EP)",
+      "size_bytes": 2750,
+      "modified": "2026-06-09T22:19:29.011Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Inferno.md",
+      "title": "📀 Inferno (2026 LP)",
+      "size_bytes": 3671,
+      "modified": "2026-06-09T22:19:29.012Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Music Has the Right to Children.md",
+      "title": "📀 Music Has the Right to Children (1998 LP)",
+      "size_bytes": 3159,
+      "modified": "2026-06-09T22:19:29.011Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Peel Session.md",
+      "title": "📀 Peel Session (1999 EP)",
+      "size_bytes": 2537,
+      "modified": "2026-06-09T22:19:29.011Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/The Campfire Headphase.md",
+      "title": "📀 The Campfire Headphase (2005 LP)",
+      "size_bytes": 3239,
+      "modified": "2026-06-09T22:19:29.012Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Tomorrow's Harvest.md",
+      "title": "📀 Tomorrow's Harvest (2013 LP)",
+      "size_bytes": 3316,
+      "modified": "2026-06-09T22:19:29.012Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Trans Canada Highway.md",
+      "title": "📀 Trans Canada Highway (2006 EP)",
+      "size_bytes": 2603,
+      "modified": "2026-06-09T22:19:29.012Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Twoism.md",
+      "title": "📀 Twoism (1995 EP)",
+      "size_bytes": 2471,
+      "modified": "2026-06-09T22:19:29.011Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada — Discography.md",
+      "title": "🟢 Boards of Canada — Master Research Hub & Discography",
+      "size_bytes": 6097,
+      "modified": "2026-06-09T22:19:29.011Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Master Playlist - Album Index.md",
+      "title": "🎵 Master Playlist — Album Index",
+      "size_bytes": 11077,
+      "modified": "2026-06-09T21:50:53.472Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/_index.md",
+      "title": "🎧 Recordings",
+      "size_bytes": 349,
+      "modified": "2026-06-09T20:35:40.452Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/_index.md",
+      "title": "🎼 Music Studies",
+      "size_bytes": 1652,
+      "modified": "2026-06-09T20:29:22.489Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/composers.md",
+      "title": "🎼 Technical Composers Analysis: Zappa & Stravinsky",
+      "size_bytes": 7047,
+      "modified": "2026-06-10T01:46:48.173Z"
+    },
+    {
+      "path": "04_MUSIC_STUDIES/stravinsky.md",
+      "title": "🎹 Technical Composers Analysis: Igor Stravinsky",
+      "size_bytes": 10041,
+      "modified": "2026-06-09T20:37:37.741Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/albums/1999.md",
+      "title": "💿 1999 (1982)",
+      "size_bytes": 14939,
+      "modified": "2026-06-09T20:33:08.975Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/albums/Controversy.md",
+      "title": "💜 Controversy (1981)",
+      "size_bytes": 12408,
+      "modified": "2026-06-09T20:32:43.155Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/albums/Purple Rain.md",
+      "title": "☔ Purple Rain (1984)",
+      "size_bytes": 20085,
+      "modified": "2026-06-09T20:33:25.131Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/chick_corea.md",
+      "title": "🎹 Technical Composers Analysis: Chick Corea & His Ensembles",
+      "size_bytes": 9891,
+      "modified": "2026-06-09T20:32:33.145Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/j_dilla.md",
+      "title": "🎹 Technical Composers Analysis: J Dilla",
+      "size_bytes": 14040,
+      "modified": "2026-06-09T20:32:33.153Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/jazz_albums.md",
+      "title": "🎷 The 10 Most Influential American Jazz Albums: A Technical Audit",
+      "size_bytes": 8752,
+      "modified": "2026-06-09T20:32:33.132Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/miles_davis.md",
+      "title": "🎹 Technical Composers Analysis: Miles Davis (Electric Period)",
+      "size_bytes": 13414,
+      "modified": "2026-06-09T20:32:33.115Z"
+    },
+    {
+      "path": "05_Jazz_&_Fusion/prince.md",
+      "title": "🎸 Technical Composers Analysis: Prince",
+      "size_bytes": 23978,
+      "modified": "2026-06-09T20:34:23.495Z"
+    },
+    {
+      "path": "06_Guitar_Solos_&_Xenochrony/zappa_solos.md",
+      "title": "🎸 The Frank Zappa Guitar Solos: An Analytical Transcription Audit",
+      "size_bytes": 10696,
+      "modified": "2026-06-09T20:31:31.182Z"
+    }
+  ],
+  "change_summary": "(git history unavailable in this build context)"
+}

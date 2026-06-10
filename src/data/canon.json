@@ -1,15 +1,75 @@
 {
   "files": [
     {
+      "path": "00_META/DAILY_DIFFS/diff - 06-08-2026.md",
+      "title": "Untitled",
+      "section": "00_META",
+      "size_bytes": 1810,
+      "modified": "2026-06-09T20:35:40.407Z",
+      "word_count": 322,
+      "excerpt": "",
+      "tags": [
+        "meta",
+        "daily-diff"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "00_META/DAILY_DIFFS/diff - 06-09-2026.md",
+      "title": "Untitled",
+      "section": "00_META",
+      "size_bytes": 254,
+      "modified": "2026-06-10T02:09:35.338Z",
+      "word_count": 47,
+      "excerpt": "",
+      "tags": [
+        "meta"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "00_META/DAILY_DIFFS/diff - 6-10-2026.md",
+      "title": "Untitled",
+      "section": "00_META",
+      "size_bytes": 206,
+      "modified": "2026-06-10T09:54:11.169Z",
+      "word_count": 35,
+      "excerpt": "",
+      "tags": [
+        "meta"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "00_META/EA Vault Audit Report.md",
+      "title": "🏛️ Elegant Automata Vault — v2.0 Audit Report",
+      "subtitle": "Executive Summary",
+      "section": "00_META",
+      "size_bytes": 5853,
+      "modified": "2026-06-10T08:58:38.852Z",
+      "word_count": 668,
+      "excerpt": "Scope: Full vault audit — 57 markdown files Standard: Unified Documentation Standard v2.0 All 57 files now conform to v2.0 frontmatter standards. 42 files received frontmatter from scratch (had no pri",
+      "tags": [
+        "meta",
+        "v2-audit",
+        "vault-maintenance"
+      ],
+      "is_index": false
+    },
+    {
       "path": "00_META/Logic Path A Project.md",
       "title": "🚀 EXP-04: Logic Pro IAC Bridge — EA Control Layer",
       "subtitle": "The Fastest Path to Hearing EA Drive Real Instruments — 30 Minutes from Code to Speakers",
       "section": "00_META",
-      "size_bytes": 9939,
-      "modified": "2026-06-07T19:06:39.000Z",
-      "word_count": 1212,
+      "size_bytes": 9679,
+      "modified": "2026-06-09T20:37:49.129Z",
+      "word_count": 1195,
       "excerpt": "EA's composition engine, Central Scrutinizer, and style models run as a standalone Python process. Instead of building DSP code to render audio, EA sends MIDI through macOS's built-in IAC Driver (Inte",
-      "tags": [],
+      "tags": [
+        "meta",
+        "logic-pro",
+        "project-plan"
+      ],
       "is_index": false
     },
     {
@@ -17,14 +77,17 @@
       "title": "🎛️ Project Idea Tracker",
       "subtitle": "The Central Control Panel for Greg's High-Utility Sonic and Scientific Experiments",
       "section": "00_META",
-      "size_bytes": 18520,
-      "modified": "2026-06-07T19:05:05.000Z",
-      "word_count": 2143,
+      "size_bytes": 18725,
+      "modified": "2026-06-09T20:31:31.172Z",
+      "word_count": 2168,
       "excerpt": "This is the centralized registry for our conceptual continuity. Every project logged here represents a distinct, high-voltage mutation of music, science, or automation. Standard commercial streaming p",
       "tags": [
-        "#EXP-01",
-        "#EXP-03",
-        "#DISC-01"
+        "meta",
+        "project-ideas",
+        "tracker",
+        "exp-01",
+        "exp-03",
+        "disc-01"
       ],
       "is_index": false
     },
@@ -32,11 +95,39 @@
       "path": "00_META/Story arch.md",
       "title": "Untitled",
       "section": "00_META",
-      "size_bytes": 2353,
-      "modified": "2026-06-05T12:57:20.000Z",
-      "word_count": 388,
+      "size_bytes": 2516,
+      "modified": "2026-06-09T20:31:31.111Z",
+      "word_count": 408,
       "excerpt": "",
-      "tags": [],
+      "tags": [
+        "meta",
+        "story"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "00_META/Tag Mesh Audit Report.md",
+      "title": "🏷️ Tag Mesh Audit Report — Elegant Automata Vault v1.0",
+      "subtitle": "An Automated, Tag-Only Analysis of the 69 Canonical Research Files, Grouped into Relational Clusters",
+      "section": "00_META",
+      "size_bytes": 11995,
+      "modified": "2026-06-10T10:24:35.981Z",
+      "word_count": 1382,
+      "excerpt": "The Elegant Automata vault is self-organizing. On June 10, 2026, we ran an automated tag-extraction analysis over the entire vault. This report documents the actual tag topology of the 69 canonical fi",
+      "tags": [
+        "meta",
+        "tagging-strategy",
+        "report",
+        "music-studies",
+        "classical",
+        "electronic",
+        "dsp",
+        "boards-of-canada",
+        "jazz",
+        "ea-project",
+        "ea-research",
+        "lp"
+      ],
       "is_index": false
     },
     {
@@ -44,11 +135,100 @@
       "title": "Untitled",
       "subtitle": "Elegant Automata",
       "section": "00_META",
-      "size_bytes": 2132,
-      "modified": "2026-06-05T13:00:29.000Z",
-      "word_count": 340,
+      "size_bytes": 2309,
+      "modified": "2026-06-09T20:31:31.132Z",
+      "word_count": 362,
       "excerpt": "To reclaim the silicon ether from the plastic people and corporate snoops. We envision a world where autonomous technology isn't a top-down instrument of control, but a localized, self-willing force o",
-      "tags": [],
+      "tags": [
+        "meta",
+        "vision"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Beginner Case Guide.md",
+      "title": "🎛️ Eurorack Modular Synthesis — Beginner Case Guide",
+      "subtitle": "A Blueprint for Architecting a Functional Physical Eurorack System to Generate and Manipulate Modulated Analog Tones",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 14659,
+      "modified": "2026-06-10T01:07:53.735Z",
+      "word_count": 1841,
+      "excerpt": "Building a physical Eurorack modular synthesizer requires a disciplined systems engineering approach where power budgets, signal paths, and voltage safety standards are balanced within a finite mechan",
+      "tags": [
+        "dsp",
+        "eurorack",
+        "hardware-setup",
+        "beginner-guide",
+        "ea-project",
+        "e0e1dd",
+        "c1121f",
+        "fdf0d5"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Beginner Purchasing Guide.md",
+      "title": "🎛️ Eurorack Purchasing Guide — Budget-Friendly Hardware Solutions",
+      "subtitle": "A Strategic Guide to Curating and Sourcing Cost-Effective Cases, Modules, and Accessories for Modular Beginners",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 10897,
+      "modified": "2026-06-10T01:07:29.841Z",
+      "word_count": 1565,
+      "excerpt": "The primary barrier to entry in Eurorack modular synthesis is cost; however, strategic module curation and sourcing can reduce starting expenditures by up to 50%. This guide presents a budget-optimize",
+      "tags": [
+        "dsp",
+        "eurorack",
+        "purchasing-guide",
+        "budget-friendly",
+        "hardware-setup",
+        "ea-project"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Deep Dive.md",
+      "title": "🎛️ Eurorack Modular Synthesis — Cultural, Electronic, and Compositional Systems",
+      "subtitle": "A Deep Dive into Eurorack Culture, Hardware Module Engineering, and Algorithmic Patching Methodologies for Generative AI Systems",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 33926,
+      "modified": "2026-06-10T01:35:56.300Z",
+      "word_count": 3873,
+      "excerpt": "The Eurorack standard (initiated by Dieter Doepfer in 1995) represents the democratization of electronic music instrument design and composition. What began as an obscure sub-rack packaging format has",
+      "tags": [
+        "dsp",
+        "eurorack",
+        "modular-synthesis",
+        "hardware-design",
+        "generative-music",
+        "ea-project",
+        "e0e1dd",
+        "c1121f",
+        "fdf0d5",
+        "dad7cd"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Eurorack Modular Synthesis - Software Bridge Guide.md",
+      "title": "🎛️ Eurorack Software-to-Hardware Bridge — Interface and Telemetry Guide",
+      "subtitle": "An Engineering Specification on DC-Coupled Audio Interfaces, Serial Scripting Bridges, and Real-Time CV Integration for SyBorg",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 16563,
+      "modified": "2026-06-10T01:35:48.959Z",
+      "word_count": 1714,
+      "excerpt": "The ultimate realization of Elegant Automata's real-time AI music engine requires a bidirectional, sub-millisecond, low-jitter interface capable of bridging virtual software nodes with physical analog",
+      "tags": [
+        "dsp",
+        "eurorack",
+        "software-bridge",
+        "midi-cv",
+        "dc-coupled",
+        "ea-project",
+        "syborg",
+        "e0e1dd",
+        "c1121f",
+        "fdf0d5"
+      ],
       "is_index": false
     },
     {
@@ -56,11 +236,40 @@
       "title": "🎛️ Elegant Automata as Logic Pro Plugins — Feasibility Analysis",
       "subtitle": "Using Logic Pro as the Audio Engine While EA Provides the Intelligence Layer",
       "section": "01_DSP_&_Audio_Physics",
-      "size_bytes": 16243,
-      "modified": "2026-06-07T19:00:55.000Z",
-      "word_count": 2112,
+      "size_bytes": 16852,
+      "modified": "2026-06-09T20:31:06.298Z",
+      "word_count": 2184,
       "excerpt": "Instead of building EA's entire audio pipeline from scratch (oscillators, filters, reverb, mix bus), use Logic Pro as the real-time audio engine while EA provides the control and intelligence layer. E",
-      "tags": [],
+      "tags": [
+        "dsp",
+        "logic-pro",
+        "midi"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "01_DSP_&_Audio_Physics/Modular Programming and AI SOTA - Deep Dive.md",
+      "title": "🎛️ Modular Software Architectures & AI SOTA — Technical Deep Dive",
+      "subtitle": "An Engineering Analysis of Differentiable DSP, Compiler-Driven Virtual Racks, and Multi-Agent Conductor Implementations for SyBorg",
+      "section": "01_DSP_&_Audio_Physics",
+      "size_bytes": 24234,
+      "modified": "2026-06-10T01:15:14.132Z",
+      "word_count": 2496,
+      "excerpt": "The convergence of real-time embedded DSP compilation, differentiable physical modeling, and lightweight local deep-learning models has transformed virtual modular synthesis from simple wave-approxima",
+      "tags": [
+        "dsp",
+        "modular-programming",
+        "sota-ai",
+        "software-architecture",
+        "generative-music",
+        "syborg",
+        "ea-project",
+        "e0e1dd",
+        "f1faee",
+        "c1121f",
+        "fdf0d5",
+        "dad7cd"
+      ],
       "is_index": false
     },
     {
@@ -68,11 +277,14 @@
       "title": "🔬 Scientific Subtopics Research: Elegant Automata",
       "subtitle": "A Detailed Investigation into Graph-Based Audio Synthesis & Generative AI",
       "section": "01_DSP_&_Audio_Physics",
-      "size_bytes": 6445,
-      "modified": "2026-06-07T12:17:07.000Z",
-      "word_count": 799,
+      "size_bytes": 6665,
+      "modified": "2026-06-09T20:31:06.277Z",
+      "word_count": 820,
       "excerpt": "Modular synthesis has historically been divided into two primary design philosophies. To design an AI agent that can patch and perform on a virtual rack, the agent must understand these sonic vocabula",
-      "tags": [],
+      "tags": [
+        "dsp",
+        "audio-physics"
+      ],
       "is_index": false
     },
     {
@@ -80,11 +292,15 @@
       "title": "🎛️ Synthesis vs. Sampling — Architectural Analysis for Elegant Automata",
       "subtitle": "Why Real-Time DSP Synthesis Is the Right Foundation for Our Modular AI Music Engine",
       "section": "01_DSP_&_Audio_Physics",
-      "size_bytes": 12494,
-      "modified": "2026-06-07T18:53:12.000Z",
-      "word_count": 1897,
+      "size_bytes": 12987,
+      "modified": "2026-06-10T00:52:47.379Z",
+      "word_count": 1939,
       "excerpt": "Input: Parameter vector from Central Scrutinizer Oscillator → Filter → Saturation → FDN Reverb → DAC ↑       ↑        ↑            ↑ LFO    Env      Env          Env (all sample-accurate, all modulata",
-      "tags": [],
+      "tags": [
+        "dsp",
+        "synthesis",
+        "sampling"
+      ],
       "is_index": false
     },
     {
@@ -92,12 +308,14 @@
       "title": "🔬 Real-Time DSP Coding Standards & Best Practices",
       "subtitle": "A Rigorous System Engineering Document on Lock-Free Concurrency, Denormal Prevention, Zero-Delay Feedback, and SIMD Vectorization",
       "section": "01_DSP_&_Audio_Physics",
-      "size_bytes": 10553,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1289,
+      "size_bytes": 10761,
+      "modified": "2026-06-09T20:31:06.271Z",
+      "word_count": 1309,
       "excerpt": "Writing real-time digital signal processing (DSP) code is not like writing a standard web API or a file-sorting script. In standard software engineering, if a thread is delayed by $50\\text{ millisecon",
       "tags": [
-        "#include"
+        "dsp",
+        "coding-standards",
+        "include"
       ],
       "is_index": false
     },
@@ -106,14 +324,15 @@
       "title": "🎛️ High-Fidelity DSP & Studio-Grade Audio Engineering",
       "subtitle": "An Analytical Investigation into PolyBLEP Anti-Aliasing, Zero-Delay Feedback (ZDF) Filters, Soft Saturation, and Feedback Delay Networks",
       "section": "01_DSP_&_Audio_Physics",
-      "size_bytes": 8513,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1095,
+      "size_bytes": 7689,
+      "modified": "2026-06-09T20:37:49.128Z",
+      "word_count": 1084,
       "excerpt": "If you generate raw, geometric waves (like our simple lookup sawtooth) in Python and feed them directly to a digital-to-analog converter (DAC), it will sound like a cheap 1980s greeting card. It sound",
       "tags": [
-        "#d32f2f",
-        "#fff",
-        "#388e3c"
+        "dsp",
+        "high-fidelity",
+        "d32f2f",
+        "fff"
       ],
       "is_index": false
     },
@@ -122,11 +341,15 @@
       "title": "🎛️ Faster-Than-Real-Time (FTRT) Look-Ahead Architecture",
       "subtitle": "An Architectural Specification on Decoupled Compositional Schedulers, Look-Ahead Buffers, and Proactive AI Modulation",
       "section": "01_DSP_&_Audio_Physics",
-      "size_bytes": 7837,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 905,
+      "size_bytes": 6512,
+      "modified": "2026-06-10T00:52:57.106Z",
+      "word_count": 873,
       "excerpt": "Greg, you have just laid your finger on a monumental systems engineering breakthrough for our audio engine. In standard digital synthesizers, the note sequencer and the audio synthesizer are tightly l",
-      "tags": [],
+      "tags": [
+        "dsp",
+        "look-ahead",
+        "architecture"
+      ],
       "is_index": false
     },
     {
@@ -134,11 +357,15 @@
       "title": "🧠 Elegant Automata — Knowledge Base Mind Map",
       "subtitle": "Mermaid mind map of the full EA project architecture, components, style extraction pipeline, and available training datasets",
       "section": "02_Style_Extraction_&_Analysis",
-      "size_bytes": 5537,
-      "modified": "2026-06-07T16:29:06.000Z",
-      "word_count": 495,
+      "size_bytes": 5737,
+      "modified": "2026-06-09T20:31:17.271Z",
+      "word_count": 515,
       "excerpt": "root((Elegant Automata)) 01_DSP_&_Audio_Physics ::icon(fa fa-microchip) PolyBLEP residual smoothing Band-limited oscillators Virtual Analog Filters Zero-Delay Feedback ZDF Trapezoidal integration Asym",
-      "tags": [],
+      "tags": [
+        "style-extraction",
+        "ea-research",
+        "knowledge-base"
+      ],
       "is_index": false
     },
     {
@@ -146,11 +373,15 @@
       "title": "📚 Music Datasets for LLM Fine-Tuning & Style Extraction",
       "subtitle": "A Curated Catalog of Available Symbolic, Structural, and Performance Datasets Relevant to Elegant Automata",
       "section": "02_Style_Extraction_&_Analysis",
-      "size_bytes": 13338,
-      "modified": "2026-06-07T15:53:44.000Z",
-      "word_count": 1886,
+      "size_bytes": 13587,
+      "modified": "2026-06-09T20:31:17.292Z",
+      "word_count": 1911,
       "excerpt": "Central Scrutinizer (LLM)                     SyBorg (DSP Engine) │                                           │ │  Fine-tuned on:                          │  Parameterized by: │  • MidiCaps (structure",
-      "tags": [],
+      "tags": [
+        "style-extraction",
+        "ea-research",
+        "datasets"
+      ],
       "is_index": false
     },
     {
@@ -158,11 +389,14 @@
       "title": "🔬 Scientific Subtopics Research: Elegant Automata",
       "subtitle": "A Detailed Investigation into Graph-Based Audio Synthesis & Generative AI",
       "section": "02_Style_Extraction_&_Analysis",
-      "size_bytes": 6445,
-      "modified": "2026-06-07T12:17:14.000Z",
-      "word_count": 799,
+      "size_bytes": 6626,
+      "modified": "2026-06-09T20:31:17.277Z",
+      "word_count": 818,
       "excerpt": "Modular synthesis has historically been divided into two primary design philosophies. To design an AI agent that can patch and perform on a virtual rack, the agent must understand these sonic vocabula",
-      "tags": [],
+      "tags": [
+        "style-extraction",
+        "ea-research"
+      ],
       "is_index": false
     },
     {
@@ -170,71 +404,670 @@
       "title": "🎯 Musician Style Extraction & Quantification for Elegant Automata",
       "subtitle": "A Rigorous Process to Discover, Quantify, and Parameterize a Performer's Expressive DNA for Real-Time Modular Synthesis",
       "section": "02_Style_Extraction_&_Analysis",
-      "size_bytes": 22543,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 2829,
+      "size_bytes": 20430,
+      "modified": "2026-06-09T20:37:30.776Z",
+      "word_count": 2788,
       "excerpt": "Instead of trying to train a massive neural network to *imitate* a musician's audio output, we build a quantified style model — a structured database of measurable, discrete musical decisions that a r",
-      "tags": [],
+      "tags": [
+        "style-extraction",
+        "ea-research"
+      ],
       "is_index": false
     },
     {
-      "path": "04_Classical_&_Composer_Studies/bach.md",
-      "title": "🎹 Technical Composers Analysis: Johann Sebastian Bach",
-      "subtitle": "An Analytical Breakdown of Voice Independence, Canonic Proportions, and Werckmeister Micro-Tuning",
-      "section": "04_Classical_&_Composer_Studies",
-      "size_bytes": 9285,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1102,
-      "excerpt": "If you think writing multi-threaded async Python code is hard, try doing it with a quill pen and a piece of parchment, managing four independent melodic voices that *never* collide or violate harmonic",
-      "tags": [],
-      "is_index": false
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/_index.md",
+      "title": "🎼 Ludwig van Beethoven",
+      "subtitle": "📄 Beethoven Studies",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 855,
+      "modified": "2026-06-09T20:29:22.435Z",
+      "word_count": 115,
+      "excerpt": "Beethoven's work represents a unified three-phase architecture — the single most influential system upgrade in Western musical history. These studies deconstruct his compositional operating system for",
+      "tags": [
+        "music-studies",
+        "classical-composers",
+        "beethoven"
+      ],
+      "is_index": true
     },
     {
-      "path": "04_Classical_&_Composer_Studies/beethoven.md",
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven piano sonatas.md",
       "title": "🎹 Technical Composers Analysis: Ludwig van Beethoven",
       "subtitle": "An Analytical Breakdown of Motivic Cellular Ingestion, Sonata-Allegro Form Hacks, and Late-Period Rhythmic Subdivision",
-      "section": "04_Classical_&_Composer_Studies",
-      "size_bytes": 10053,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1079,
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 10166,
+      "modified": "2026-06-09T20:30:57.679Z",
+      "word_count": 1095,
       "excerpt": "Let’s get one thing straight about Ludwig van Beethoven: the man was not a tune-smith. If you want sweet, flowing, easily digestible melodies, go buy a Mozart record. Beethoven didn't write melodies;",
-      "tags": [],
+      "tags": [
+        "music-studies",
+        "classical",
+        "beethoven",
+        "piano-sonatas"
+      ],
       "is_index": false
     },
     {
-      "path": "04_Classical_&_Composer_Studies/beethoven_canon.md",
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven_canon.md",
       "title": "🎼 Ludwig van Beethoven's Entire Canon: The Unified System Architecture",
       "subtitle": "An Analytical Deconstruction of the Three-Phase Software Lifecycle of Western Music's Ultimate OS",
-      "section": "04_Classical_&_Composer_Studies",
-      "size_bytes": 8256,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1027,
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 8383,
+      "modified": "2026-06-09T20:31:11.951Z",
+      "word_count": 1047,
       "excerpt": "To understand Ludwig van Beethoven's entire canon, you have to stop looking at it as a collection of separate pieces of music (Symphonies, Quartets, Sonatas, Choral works) and start looking at it as a",
-      "tags": [],
+      "tags": [
+        "music-studies",
+        "classical",
+        "beethoven",
+        "canon"
+      ],
       "is_index": false
     },
     {
-      "path": "04_Classical_&_Composer_Studies/beethoven_quartets.md",
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/BEETHOVEN/beethoven_quartets.md",
       "title": "🎻 Technical Composers Analysis: Beethoven's String Quartets",
       "subtitle": "An Analytical Breakdown of Voice-Leading Allocations, Continuous State Machines, and the Dissonant Contrapuntal Fury of the Grosse Fuge",
-      "section": "04_Classical_&_Composer_Studies",
-      "size_bytes": 12035,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1388,
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 12169,
+      "modified": "2026-06-09T20:31:12.006Z",
+      "word_count": 1408,
       "excerpt": "Goethe famously described a string quartet as \"four rational people conversing with one another.\" But if you look at the score of a Beethoven String Quartet—especially his Middle and Late periods—it’s",
-      "tags": [],
+      "tags": [
+        "music-studies",
+        "classical",
+        "beethoven",
+        "string-quartets"
+      ],
       "is_index": false
     },
     {
-      "path": "04_Classical_&_Composer_Studies/composers.md",
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/_index.md",
+      "title": "🎹 Classical Composers",
+      "subtitle": "📄 Composer Studies",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 1425,
+      "modified": "2026-06-09T20:29:22.428Z",
+      "word_count": 181,
+      "excerpt": "Technical analyses of Western classical composers — extracting compositional DNA for generative music systems. Each study focuses on the mathematical, structural, and algorithmic principles underlying",
+      "tags": [
+        "music-studies",
+        "classical-composers"
+      ],
+      "is_index": true
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/bach.md",
+      "title": "🎹 Technical Composers Analysis: Johann Sebastian Bach",
+      "subtitle": "An Analytical Breakdown of Voice Independence, Canonic Proportions, and Werckmeister Micro-Tuning",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 9424,
+      "modified": "2026-06-09T20:30:32.471Z",
+      "word_count": 1118,
+      "excerpt": "If you think writing multi-threaded async Python code is hard, try doing it with a quill pen and a piece of parchment, managing four independent melodic voices that *never* collide or violate harmonic",
+      "tags": [
+        "music-studies",
+        "classical",
+        "counterpoint",
+        "bach"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/bartok.md",
+      "title": "🎹 Technical Composers Analysis: Béla Bartók",
+      "subtitle": "An Analytical Breakdown of the Axis System, Golden Section Architecture, and Folk Abstraction as Pitch-Class Set Theory",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 13505,
+      "modified": "2026-06-09T20:30:32.469Z",
+      "word_count": 1428,
+      "excerpt": "Béla Bartók didn't abandon tonality — he rebuilt it from scratch. The axis system, first theorized by Ernő Lendvai, replaces the traditional circle of fifths with a symmetrical framework based on trit",
+      "tags": [
+        "music-studies",
+        "classical",
+        "bartok",
+        "folk-music",
+        "m7"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/debussy.md",
+      "title": "🎹 Technical Composers Analysis: Claude Debussy",
+      "subtitle": "An Analytical Breakdown of Non-Functional Harmony, Timbral Orchestration, and the Dissolution of Tonal Gravity",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 12997,
+      "modified": "2026-06-09T20:30:32.474Z",
+      "word_count": 1350,
+      "excerpt": "Claude Debussy didn't invent new chords — he freed chords from their obligations. In traditional harmony, every chord has a job: the dominant MUST resolve to the tonic. Debussy abolished these grammat",
+      "tags": [
+        "music-studies",
+        "classical",
+        "debussy",
+        "impressionism"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/ligeti.md",
+      "title": "🎹 Technical Composers Analysis: György Ligeti",
+      "subtitle": "An Analytical Breakdown of Micropolyphony, Polyrhythmic Lattices, and Mechanical Études Beyond Human Capability",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 13895,
+      "modified": "2026-06-09T20:30:43.971Z",
+      "word_count": 1319,
+      "excerpt": "Ligeti's signature invention is micropolyphony: a dense, tightly-woven canon where so many voices are moving so quickly that the individual lines become imperceptible. You hear the aggregate texture —",
+      "tags": [
+        "music-studies",
+        "classical",
+        "ligeti",
+        "micropolyphony"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/messiaen.md",
+      "title": "🎹 Technical Composers Analysis: Olivier Messiaen",
+      "subtitle": "An Analytical Breakdown of Modes of Limited Transposition, Non-Retrogradable Rhythms, and Algorithmic Birdsong",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 13396,
+      "modified": "2026-06-09T20:30:43.987Z",
+      "word_count": 1305,
+      "excerpt": "If you want to understand how constraint-based generation produces musical coherence, you study Messiaen. His Modes of Limited Transposition are a closed mathematical system — a finite set of scales t",
+      "tags": [
+        "music-studies",
+        "classical",
+        "messiaen"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/nancarrow.md",
+      "title": "🎹 Technical Composers Analysis: Conlon Nancarrow",
+      "subtitle": "An Analytical Breakdown of Tempo Canons, Irrational Time Ratios, and Mechanical Composition Beyond Human Capability",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 12141,
+      "modified": "2026-06-09T20:30:43.946Z",
+      "word_count": 1245,
+      "excerpt": "Conlon Nancarrow is the most important composer for Elegant Automata because he solved the fundamental problem we're facing: how to compose music whose complexity exceeds human performance limits, usi",
+      "tags": [
+        "music-studies",
+        "classical",
+        "nancarrow",
+        "player-piano"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/reich.md",
+      "title": "🎹 Technical Composers Analysis: Steve Reich",
+      "subtitle": "An Analytical Breakdown of Phase Processes, Resultant Patterns, and Music as Pure Process Specification",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 12932,
+      "modified": "2026-06-09T20:30:57.689Z",
+      "word_count": 1389,
+      "excerpt": "Steve Reich reduced composition to its absolute minimum: set up a process and let it run. His phase music is the most algorithmically pure music in the Western tradition — the score IS the algorithm.",
+      "tags": [
+        "music-studies",
+        "classical",
+        "reich",
+        "minimalism"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/CLASSICAL COMPOSERS/stockhausen.md",
+      "title": "🎹 Technical Composers Analysis: Karlheinz Stockhausen",
+      "subtitle": "An Analytical Breakdown of Moment Form, Electronic Music Synthesis, and the Unification of Pitch, Rhythm, Timbre, and Space",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 14162,
+      "modified": "2026-06-09T20:30:57.695Z",
+      "word_count": 1377,
+      "excerpt": "Karlheinz Stockhausen didn't just compose electronic music — he invented its theoretical foundations. Working at the WDR (West German Radio) electronic studio in Cologne from 1953, he created the firs",
+      "tags": [
+        "music-studies",
+        "classical",
+        "stockhausen",
+        "electronic"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/GENRES/_index.md",
+      "title": "🎵 Genres",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 340,
+      "modified": "2026-06-09T20:35:40.476Z",
+      "word_count": 48,
+      "excerpt": "Genre taxonomies, stylistic boundary analysis, and cross-pollination studies for generative music modeling.",
+      "tags": [
+        "music-studies",
+        "genres"
+      ],
+      "is_index": true
+    },
+    {
+      "path": "04_MUSIC_STUDIES/INSTRUMENTS/_index.md",
+      "title": "🎻 Instruments",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 368,
+      "modified": "2026-06-09T20:35:40.444Z",
+      "word_count": 50,
+      "excerpt": "Instrument studies, extended techniques, physical modeling parameters, and timbral analysis for sound design and synthesis.",
+      "tags": [
+        "music-studies",
+        "instruments"
+      ],
+      "is_index": true
+    },
+    {
+      "path": "04_MUSIC_STUDIES/JAZZ COMPOSERS/_index.md",
+      "title": "🎷 Jazz Composers",
+      "subtitle": "📄 Composer Studies",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 513,
+      "modified": "2026-06-09T20:35:40.480Z",
+      "word_count": 74,
+      "excerpt": "Technical analyses of jazz and fusion composers — harmonic density, metric modulation, improvisational systems, and groove mechanics for generative music systems.",
+      "tags": [
+        "music-studies",
+        "jazz",
+        "jazz-composers"
+      ],
+      "is_index": true
+    },
+    {
+      "path": "04_MUSIC_STUDIES/JAZZ COMPOSERS/miles_davis.md",
+      "title": "🎺 Miles Davis: The Algorithmic Reinventor",
+      "subtitle": "A Technical Deconstruction of Five Decades of Jazz Evolution — Modal Systems, Rhythmic Displacement, and the Studio as Instrument",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 23902,
+      "modified": "2026-06-09T20:35:40.433Z",
+      "word_count": 3679,
+      "excerpt": "Miles Davis didn't have *a* sound — he had seven distinct operating systems, each a complete rewrite of the last. No other composer in any genre reinvented their fundamental architecture as completely",
+      "tags": [
+        "music-studies",
+        "composer-study",
+        "jazz",
+        "miles-davis",
+        "ea-research"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/Modular Culture and Movements.md",
+      "title": "🎛️ The Human Side of Modular — Culture, Movements, and Performative Lineages",
+      "subtitle": "A Deep Cultural and Historical Overview of Modular Synthesis, Community Guilds, Artistic Paradigms, and the Sculptors of Voltage",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 24076,
+      "modified": "2026-06-10T01:46:40.030Z",
+      "word_count": 2606,
+      "excerpt": "The modular synthesizer is not merely a tool for sound design; it is a cultural ecosystem, a physical rebellion against screen-fatigue, and a philosophical return to ephemeral, present-focused perform",
+      "tags": [
+        "music-studies",
+        "modular-culture",
+        "music-history",
+        "synthesizer-movements",
+        "genres",
+        "major-players",
+        "ea-project",
+        "e0e1dd",
+        "f1faee",
+        "c1121f",
+        "fdf0d5"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Geogaddi.md",
+      "title": "📀 Geogaddi (2002 LP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 3398,
+      "modified": "2026-06-09T22:19:29.012Z",
+      "word_count": 479,
+      "excerpt": "The Occult, Mathematical, and Claustrophobic Masterpiece Released in February 2002 by Warp Records (WARP101), `Geogaddi` is Boards of Canada's second studio album. Following the massive success of the",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "lp",
+        "dark-ambient",
+        "occult"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Hi Scores.md",
+      "title": "📀 Hi Scores (1996 EP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 2484,
+      "modified": "2026-06-09T22:19:29.011Z",
+      "word_count": 346,
+      "excerpt": "The Breakbeat Breakthrough and Warp Genesis Released in 1996 on Skam Records (SKAM008), `Hi Scores` was Boards of Canada's first widely distributed release. It established their presence in the underg",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "ep",
+        "breakbeat"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/In a Beautiful Place Out in the Country.md",
+      "title": "📀 In a Beautiful Place Out in the Country (2000 EP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 2750,
+      "modified": "2026-06-09T22:19:29.011Z",
+      "word_count": 413,
+      "excerpt": "The Branch Davidian Pastoral Concept EP Released in November 2000 by Warp Records (WARP144), `In a Beautiful Place Out in the Country` is a highly focused, conceptual 4-track EP. It is widely consider",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "ep",
+        "cults"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Inferno.md",
+      "title": "📀 Inferno (2026 LP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 3671,
+      "modified": "2026-06-09T22:19:29.012Z",
+      "word_count": 509,
+      "excerpt": "The Gnostic, Astrophysical, and Geological Return Album Released on May 29, 2026 by Warp Records (WARP496) as a shocking, unannounced drop after 13 years of absolute silence, `Inferno` represents a ma",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "lp",
+        "gnosticism",
+        "astronomy"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Music Has the Right to Children.md",
+      "title": "📀 Music Has the Right to Children (1998 LP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 3159,
+      "modified": "2026-06-09T22:19:29.011Z",
+      "word_count": 445,
+      "excerpt": "The Landmark Magnum Opus of Downtempo Hauntology Released in April 1998 by Warp Records and Skam Records (WARP55), `Music Has the Right to Children` is Boards of Canada's debut studio album. It is uni",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "lp",
+        "idm",
+        "magnum-opus"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Peel Session.md",
+      "title": "📀 Peel Session (1999 EP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 2537,
+      "modified": "2026-06-09T22:19:29.011Z",
+      "word_count": 358,
+      "excerpt": "The Raw Live Hardware Broadcast Recorded in June 1998 for legendary BBC Radio 1 host John Peel and released as an EP by Warp in 1999 (WAP114), `Peel Session` captured Boards of Canada at the absolute",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "ep",
+        "peel-session"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/The Campfire Headphase.md",
+      "title": "📀 The Campfire Headphase (2005 LP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 3239,
+      "modified": "2026-06-09T22:19:29.012Z",
+      "word_count": 445,
+      "excerpt": "The Sun-Drenched Acoustic-Degradation Experiment Released in October 2005 by Warp Records (WARP123), `The Campfire Headphase` is Boards of Canada's third studio album. It represented a major, controve",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "lp",
+        "guitar-degradation",
+        "psychedelic"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Tomorrow's Harvest.md",
+      "title": "📀 Tomorrow's Harvest (2013 LP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 3316,
+      "modified": "2026-06-09T22:19:29.012Z",
+      "word_count": 468,
+      "excerpt": "The Bleak, Cinematic, and Post-Apocalyptic Masterpiece Released in June 2013 by Warp Records (WARP257) after an agonizing 8-year period of total silence, `Tomorrow's Harvest` was announced via a compl",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "lp",
+        "post-apocalyptic",
+        "environmental-decay"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Trans Canada Highway.md",
+      "title": "📀 Trans Canada Highway (2006 EP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 2603,
+      "modified": "2026-06-09T22:19:29.012Z",
+      "word_count": 377,
+      "excerpt": "The Road-Trip Companion and Left-Coast Drift Released in May 2006 by Warp Records (WARP196), `Trans Canada Highway` is a 6-track EP that serves as a direct companion and stylistic epilogue to *The Cam",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "ep",
+        "road-trip"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada/Twoism.md",
+      "title": "📀 Twoism (1995 EP)",
+      "subtitle": "🏗️ 1. Release Context `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 2471,
+      "modified": "2026-06-09T22:19:29.011Z",
+      "word_count": 361,
+      "excerpt": "The Bridge Between the Private Tapes and the Warp Era Originally self-released on the duo's private Music70 imprint in 1995 with a pressing of only 100 vinyl copies and cassettes, `Twoism` is the cruc",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "boards-of-canada",
+        "ep",
+        "early-boc"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Boards of Canada — Discography.md",
+      "title": "🟢 Boards of Canada — Master Research Hub & Discography",
+      "subtitle": "🏗️ 1. Executive Summary `[LLM]`",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 6097,
+      "modified": "2026-06-09T22:19:29.011Z",
+      "word_count": 895,
+      "excerpt": "An Analytical Exploration of the Sonic Architecture, Hauntology, and Production Mythology of Michael Sandison & Marcus Eoin Boards of Canada (BoC) are a Scottish electronic music duo consisting of bro",
+      "tags": [
+        "music-studies",
+        "electronic",
+        "discography",
+        "boards-of-canada",
+        "idm",
+        "ambient-techno"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/Master Playlist - Album Index.md",
+      "title": "🎵 Master Playlist — Album Index",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 11077,
+      "modified": "2026-06-09T21:50:53.472Z",
+      "word_count": 2794,
+      "excerpt": "Source: Apple Music playlist \"Master\" Extracted: June 9, 2026",
+      "tags": [
+        "music-studies",
+        "recordings",
+        "playlists",
+        "master-playlist"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/RECORDINGS/_index.md",
+      "title": "🎧 Recordings",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 349,
+      "modified": "2026-06-09T20:35:40.452Z",
+      "word_count": 48,
+      "excerpt": "Reference recordings, listening guides, and annotated discographies for composer studies and genre analysis.",
+      "tags": [
+        "music-studies",
+        "recordings"
+      ],
+      "is_index": true
+    },
+    {
+      "path": "04_MUSIC_STUDIES/_index.md",
+      "title": "🎼 Music Studies",
+      "subtitle": "📂 Subdirectories",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 1652,
+      "modified": "2026-06-09T20:29:22.489Z",
+      "word_count": 205,
+      "excerpt": "Composer analysis, technical deconstruction, and generative music research. The Elegant Automata canon draws from classical, modern, and jazz traditions — extracting compositional DNA for AI-driven re",
+      "tags": [
+        "music-studies"
+      ],
+      "is_index": true
+    },
+    {
+      "path": "04_MUSIC_STUDIES/composers.md",
       "title": "🎼 Technical Composers Analysis: Zappa & Stravinsky",
       "subtitle": "An Analytical Breakdown of Conceptual Continuity, Xenochrony, and Metrical Disruption",
-      "section": "04_Classical_&_Composer_Studies",
-      "size_bytes": 6693,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 889,
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 7047,
+      "modified": "2026-06-10T01:46:48.173Z",
+      "word_count": 925,
       "excerpt": "Frank Zappa didn't write \"songs\"; he built highly structured sonic architecture containing deliberate, calculated, and often extreme structural complexity. To model a \"Zappa Node\" in our AI music gene",
-      "tags": [],
+      "tags": [
+        "music-studies",
+        "composers",
+        "zappa",
+        "stravinsky"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/stravinsky.md",
+      "title": "🎹 Technical Composers Analysis: Igor Stravinsky",
+      "subtitle": "An Analytical Breakdown of Rhythmic Displacement, Polymetric Layering, and Cellular Block Juxtaposition",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 10041,
+      "modified": "2026-06-09T20:37:37.741Z",
+      "word_count": 1358,
+      "excerpt": "If Beethoven turned the Sonata form into a weapon, Stravinsky took rhythm itself and made it the primary compositional material. Before *The Rite of Spring* (1913), rhythm was the servant of melody an",
+      "tags": [
+        "music-studies",
+        "classical",
+        "stravinsky",
+        "polyrhythm",
+        "fff"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/albums/1999.md",
+      "title": "💿 1999 (1982)",
+      "subtitle": "The breakthrough — where the Linn LM-1 becomes the rhythmic engine, the Oberheim OB-X defines a decade's sound, and the Minneapolis Sound announces itself to the world",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 14939,
+      "modified": "2026-06-09T20:33:08.975Z",
+      "word_count": 2329,
+      "excerpt": "By 1982, Prince was a critic's darling who couldn't get arrested on pop radio. Three albums of increasingly ambitious funk-rock had earned him a cult following, but Warner Bros. was getting impatient.",
+      "tags": [
+        "jazz",
+        "album-study",
+        "prince",
+        "prince-album",
+        "year-1982",
+        "linn-lm1",
+        "oberheim-obx",
+        "minneapolis-sound",
+        "synth-pop",
+        "funk"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/albums/Controversy.md",
+      "title": "💜 Controversy (1981)",
+      "subtitle": "Prince's fourth album — the bridge from bedroom funk to arena ambition, where the Linn LM-1 enters the picture and the Minneapolis Sound takes shape",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 12408,
+      "modified": "2026-06-09T20:32:43.155Z",
+      "word_count": 1984,
+      "excerpt": "Prince, 23 years old, had released three albums that established him as a prodigious talent but had yet to break through commercially. *Controversy* is where he stopped being a bedroom wunderkind and",
+      "tags": [
+        "jazz",
+        "album-study",
+        "prince",
+        "controversy",
+        "prince-album",
+        "year-1981",
+        "linn-lm1",
+        "oberheim",
+        "minneapolis-sound"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/albums/Purple Rain.md",
+      "title": "☔ Purple Rain (1984)",
+      "subtitle": "The album where Prince became a bandleader, the guitar became a voice, subtraction became a superpower, and pop music's rulebook was rewritten in real time",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 20085,
+      "modified": "2026-06-09T20:33:25.131Z",
+      "word_count": 3133,
+      "excerpt": "By 1983, Prince had proven he could make a masterpiece alone in his home studio. *1999* was a critical and commercial breakthrough. Warner Bros. wanted more of the same — a Prince solo album with more",
+      "tags": [
+        "jazz",
+        "album-study",
+        "prince",
+        "purple-rain",
+        "prince-album",
+        "year-1984",
+        "the-revolution",
+        "guitar",
+        "linn-lm1",
+        "oberheim",
+        "soundtrack"
+      ],
       "is_index": false
     },
     {
@@ -242,11 +1075,31 @@
       "title": "🎹 Technical Composers Analysis: Chick Corea & His Ensembles",
       "subtitle": "An Analytical Breakdown of Quartal Harmony, Montuno Ostinatos, Fender Rhodes Ring Modulation, and Hyper-Syncopated Unisons",
       "section": "05_Jazz_&_Fusion",
-      "size_bytes": 9829,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1119,
+      "size_bytes": 9891,
+      "modified": "2026-06-09T20:32:33.145Z",
+      "word_count": 1138,
       "excerpt": "If you want to understand rhythmic urgency and intervallic brightness, you have to study Armando Anthony \"Chick\" Corea. While my own music (Zappa) focused on cynical social commentary and brutal tuple",
-      "tags": [],
+      "tags": [
+        "jazz",
+        "fusion",
+        "chick-corea"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/j_dilla.md",
+      "title": "🎹 Technical Composers Analysis: J Dilla",
+      "subtitle": "An Analytical Breakdown of Unquantized MPC Swing, Microtiming as Compositional Material, and Feel as Quantifiable Data",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 14040,
+      "modified": "2026-06-09T20:32:33.153Z",
+      "word_count": 1570,
+      "excerpt": "James \"J Dilla\" Yancey didn't invent unquantized hip-hop — but he elevated it to an art form so distinctive that it has its own name: \"Dilla Time.\" His beats don't sit on the grid. They drift, lurch,",
+      "tags": [
+        "jazz",
+        "hip-hop",
+        "j-dilla"
+      ],
       "is_index": false
     },
     {
@@ -254,11 +1107,52 @@
       "title": "🎷 The 10 Most Influential American Jazz Albums: A Technical Audit",
       "subtitle": "An Analytical Breakdown of Modal Grids, Coltrane Changes, Studio Splicing, and Synthesizer Fusion Orchestrations",
       "section": "05_Jazz_&_Fusion",
-      "size_bytes": 8675,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1274,
+      "size_bytes": 8752,
+      "modified": "2026-06-09T20:32:33.132Z",
+      "word_count": 1291,
       "excerpt": "Here is the definitive, technically audited list of the 10 most influential albums in American jazz history. We bypass standard public relations fluff and look strictly at the engineering, harmonic in",
-      "tags": [],
+      "tags": [
+        "jazz",
+        "albums"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/miles_davis.md",
+      "title": "🎹 Technical Composers Analysis: Miles Davis (Electric Period)",
+      "subtitle": "An Analytical Breakdown of Modal Space, Tape Editing as Composition, and the Studio as Instrument",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 13414,
+      "modified": "2026-06-09T20:32:33.115Z",
+      "word_count": 1378,
+      "excerpt": "Miles Davis's electric period (1968-1975) redefined what it means to compose. The composition didn't happen on paper before the recording — it happened in the editing room after the recording. Produce",
+      "tags": [
+        "jazz",
+        "miles-davis"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "05_Jazz_&_Fusion/prince.md",
+      "title": "🎸 Technical Composers Analysis: Prince",
+      "subtitle": "An Analytical Breakdown of the Linn LM-1 as Compositional Tool, Oberheim Synthesizer Layering, Bass-Subtraction as Sonic Architecture, and the Birth of the Minneapolis Sound",
+      "section": "05_Jazz_&_Fusion",
+      "size_bytes": 23978,
+      "modified": "2026-06-09T20:34:23.495Z",
+      "word_count": 3156,
+      "excerpt": "Prince didn't just *use* the Linn LM-1 Drum Computer — he transformed it from a drummer replacement into a compositional engine. Where other artists selected stock patterns, Prince treated the LM-1 as",
+      "tags": [
+        "jazz",
+        "composer-study",
+        "prince",
+        "minneapolis-sound",
+        "linn-lm1",
+        "drum-programming",
+        "synthesizer",
+        "guitar",
+        "production",
+        "funk"
+      ],
       "is_index": false
     },
     {
@@ -266,49 +1160,28 @@
       "title": "🎸 The Frank Zappa Guitar Solos: An Analytical Transcription Audit",
       "subtitle": "A Rigorous Musicological Decomposition of Shut Up 'n Play Yer Guitar, the 1988 Guitar CD, and Steve Vai's Impossible Transcription Mathematics",
       "section": "06_Guitar_Solos_&_Xenochrony",
-      "size_bytes": 10522,
-      "modified": "2026-06-07T12:10:35.000Z",
-      "word_count": 1266,
+      "size_bytes": 10696,
+      "modified": "2026-06-09T20:31:31.182Z",
+      "word_count": 1290,
       "excerpt": "Most guitar players use a solo as a brief, self-indulgent opportunity to show how fast they can wiggle their fingers or how many shiny leather pants they own. I looked at it differently. To me, a guit",
-      "tags": [],
-      "is_index": false
-    },
-    {
-      "path": "Elegant Automata.md",
-      "title": "🎛️ Elegant Automata",
-      "subtitle": "☰ Navigation",
-      "section": "Elegant Automata.md",
-      "size_bytes": 6026,
-      "modified": "2026-06-07T20:39:53.000Z",
-      "word_count": 641,
-      "excerpt": "An AI-led musical soundscape creator driven by a customizable, quirky, and creative AI brain — The Central Scrutinizer. EA's core strength is ML-trained music orchestration with unique modulators and",
-      "tags": [],
-      "is_index": false
-    },
-    {
-      "path": "Structure.md",
-      "title": "Untitled",
-      "section": "Structure.md",
-      "size_bytes": 739,
-      "modified": "2026-06-07T16:58:15.000Z",
-      "word_count": 103,
-      "excerpt": "",
-      "tags": [],
+      "tags": [
+        "guitar",
+        "zappa",
+        "xenochrony"
+      ],
       "is_index": false
     }
   ],
-  "total_files": 24,
-  "total_words": 28077,
+  "total_files": 67,
+  "total_words": 80846,
   "sections": [
     "00_META",
     "01_DSP_&_Audio_Physics",
     "02_Style_Extraction_&_Analysis",
-    "04_Classical_&_Composer_Studies",
+    "04_MUSIC_STUDIES",
     "05_Jazz_&_Fusion",
-    "06_Guitar_Solos_&_Xenochrony",
-    "Elegant Automata.md",
-    "Structure.md"
+    "06_Guitar_Solos_&_Xenochrony"
   ],
-  "extracted_at": "2026-06-07T23:57:29.227Z",
+  "extracted_at": "2026-06-10T10:42:16.957Z",
   "vault_path": "/Users/gregevans/workspace/ElegantAutomata/obsidian-vault"
 }

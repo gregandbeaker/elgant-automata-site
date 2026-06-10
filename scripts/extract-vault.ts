@@ -41,6 +41,33 @@ const STATUS_MAP: Record<string, string> = {
   '\u2B1C': 'pending',
 };
 
+// ── Deploy Gate configuration (Selective Pushes) ───────────────
+const DEPLOY_GATE = {
+  // Only compile files from these top-level sections
+  allowedSections: [
+    '00_META',
+    '01_DSP_&_Audio_Physics',
+    '02_Style_Extraction_&_Analysis',
+    '03_Generative_Rhythm_&_Sequencing',
+    '04_MUSIC_STUDIES',
+    '05_Jazz_&_Fusion',
+    '06_Guitar_Solos_&_Xenochrony'
+  ],
+
+  // Hard blacklist: skip files containing ANY of these tags
+  blockedTags: [
+    'private',
+    'internal',
+    'trade-secret',
+    'draft',
+    'personal-notes'
+  ],
+
+  // Set to true to require a specific whitelisted tag or 'public'
+  requirePublicWhitelist: false,
+  whitelistedTags: ['public', 'ea-research', 'music-theory', 'synthesis', 'production']
+};
+
 // ── Types ──────────────────────────────────────────────────────
 
 interface Project {
@@ -194,10 +221,104 @@ function extractSubtitle(lines: string[]): string | undefined {
   return undefined;
 }
 
-/** Extract hashtags */
-function extractTags(content: string): string[] {
+/** Extract frontmatter and inline hashtags based on Unified Tagging Strategy v1.0 */
+function extractFrontmatterAndInlineTags(content: string, lines: string[], section: string): string[] {
+  const tagsSet = new Set<string>();
+
+  // 1. Folder-Based Inheritance Fallback (Unified Tagging Strategy v1.0 Part 5)
+  const inheritanceMap: Record<string, string> = {
+    '00_META': 'meta',
+    '01_DSP_&_Audio_Physics': 'dsp',
+    '02_Style_Extraction_&_Analysis': 'style-extraction',
+    '03_Generative_Rhythm_&_Sequencing': 'generative',
+    '04_MUSIC_STUDIES': 'music-studies',
+    '05_Jazz_&_Fusion': 'jazz',
+    '06_Guitar_Solos_&_Xenochrony': 'guitar',
+    '07_Code': 'ea-project'
+  };
+
+  const inheritedTag = inheritanceMap[section];
+  if (inheritedTag) {
+    tagsSet.add(inheritedTag);
+  }
+
+  // 2. Extract YAML Frontmatter Tags
+  let inFrontmatter = false;
+  let inTagsBlock = false;
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (trimmed === '---') {
+      if (!inFrontmatter) {
+        inFrontmatter = true;
+        continue;
+      } else {
+        break; // End of frontmatter block
+      }
+    }
+
+    if (inFrontmatter) {
+      // Format A: tags: [tag1, tag2, tag3]
+      const inlineArrayMatch = trimmed.match(/^tags:\s*\[(.*?)\]/);
+      if (inlineArrayMatch) {
+        const parsed = inlineArrayMatch[1]
+          .split(',')
+          .map(t => t.trim().replace(/^['"]|['"]$/g, ''))
+          .filter(Boolean);
+        parsed.forEach(t => tagsSet.add(t));
+        continue;
+      }
+
+      // Format B: start of multiline list tags:
+      if (trimmed.startsWith('tags:')) {
+        inTagsBlock = true;
+        const afterTags = trimmed.substring(5).trim();
+        // If single tag is written inline without brackets: tags: music
+        if (afterTags && !afterTags.startsWith('-') && !afterTags.startsWith('[')) {
+          tagsSet.add(afterTags.replace(/^['"]|['"]$/g, ''));
+          inTagsBlock = false;
+        }
+        continue;
+      }
+
+      // Parse bullet points under tags: block
+      if (inTagsBlock) {
+        // If we hit another YAML key (e.g. status:, date:, related:), tags block is over
+        if (trimmed.includes(':') && !trimmed.startsWith('-')) {
+          inTagsBlock = false;
+          continue;
+        }
+
+        const bulletMatch = trimmed.match(/^-\s*(.+)/);
+        if (bulletMatch) {
+          tagsSet.add(bulletMatch[1].trim().replace(/^['"]|['"]$/g, ''));
+        } else if (trimmed && !trimmed.startsWith('-')) {
+          tagsSet.add(trimmed.replace(/^['"]|['"]$/g, ''));
+        }
+      }
+    }
+  }
+
+  // 3. Extract Inline Hashtags (fallbacks / cross-references)
   const matches = content.match(/#\w[\w-]+/g);
-  return matches ? [...new Set(matches.filter(t => !/^\d+$/.test(t.replace('#', ''))).slice(0, 10))] : [];
+  if (matches) {
+    matches
+      .map(t => t.replace('#', ''))
+      .filter(t => !/^\d+$/.test(t)) // Filter out numbers-only hashtags
+      .slice(0, 10)
+      .forEach(t => tagsSet.add(t));
+  }
+
+  // 4. Sanitize and Filter Tags (Ensure strict kebab-case and remove anti-patterns)
+  const finalTags = [...tagsSet]
+    .map(t => t.toLowerCase().replace(/_/g, '-').trim())
+    .filter(t => {
+      // Remove folder number anti-patterns (e.g. 01planning, 05jazz)
+      if (/^\d+/.test(t)) return false;
+      return t.length > 1;
+    });
+
+  return finalTags;
 }
 
 /** Generate excerpt from body text */
@@ -234,10 +355,34 @@ function scanVault(root: string): CanonFile[] {
         walk(fullPath);
       } else if (entry.isFile() && entry.name.endsWith('.md')) {
         const relPath = path.relative(root, fullPath);
+        const section = relPath.split(path.sep)[0] || 'root';
+
+        // 1. Gatekeeper: Allowed Sections Check
+        if (!DEPLOY_GATE.allowedSections.includes(section) && section !== 'root') {
+          continue; // Skip directories not in allowed list
+        }
+
         const stat = fs.statSync(fullPath);
         const content = fs.readFileSync(fullPath, 'utf-8');
         const lines = content.split('\n');
-        const section = relPath.split(path.sep)[0] || 'root';
+        
+        // Extract tags early for gate checks
+        const fileTags = extractFrontmatterAndInlineTags(content, lines, section);
+
+        // 2. Gatekeeper: Blacklisted Tags Check
+        const hasBlockedTag = fileTags.some(tag => DEPLOY_GATE.blockedTags.includes(tag));
+        if (hasBlockedTag) {
+          continue; // Skip blacklisted drafts/private files
+        }
+
+        // 3. Gatekeeper: Whitelisted Tags Check (if enabled)
+        if (DEPLOY_GATE.requirePublicWhitelist) {
+          const hasWhitelistedTag = fileTags.some(tag => DEPLOY_GATE.whitelistedTags.includes(tag));
+          if (!hasWhitelistedTag && !fileTags.includes('public')) {
+            continue; // Skip files without public authorization
+          }
+        }
+
         const fileTitle = extractTitle(lines);
         const wordCount = content.split(/\s+/).length;
         const isIndex = entry.name.startsWith('_index');
@@ -251,7 +396,7 @@ function scanVault(root: string): CanonFile[] {
           modified: stat.mtime.toISOString(),
           word_count: wordCount,
           excerpt: extractExcerpt(lines, fileTitle),
-          tags: extractTags(content),
+          tags: fileTags,
           is_index: isIndex,
         });
       }

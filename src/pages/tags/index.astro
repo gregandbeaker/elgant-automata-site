@@ -1,0 +1,247 @@
+---
+// src/pages/tags/index.astro
+import Layout from '../../layouts/Layout.astro';
+import canonData from '../../data/canon.json';
+
+interface CanonFile {
+  path: string;
+  title: string;
+  tags: string[];
+}
+
+interface CanonResult {
+  files: CanonFile[];
+  total_files: number;
+  total_words: number;
+  extracted_at: string;
+}
+
+const data = canonData as CanonResult;
+
+// 1. Calculate tag frequencies
+const tagCounts: Record<string, number> = {};
+data.files.forEach(file => {
+  if (file.tags) {
+    file.tags.forEach(tag => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  }
+});
+
+// 2. Format tags list
+const tags = Object.entries(tagCounts)
+  .map(([name, count]) => ({ name, count }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+// 3. Find min/max occurrences to scale tag sizes dynamically
+const counts = Object.values(tagCounts);
+const minCount = Math.min(...counts);
+const maxCount = Math.max(...counts);
+
+function getTagSize(count: number): string {
+  if (maxCount === minCount) return '1rem';
+  // Scale dynamically between 0.8rem and 2.0rem
+  const minSize = 0.8;
+  const maxSize = 2.0;
+  const size = minSize + ((count - minCount) / (maxCount - minCount)) * (maxSize - minSize);
+  return `${size.toFixed(2)}rem`;
+}
+
+// 4. Group tags by prefix/category for highly-structured browsing
+// (e.g. mapping standard tag clusters or alphabetical columns)
+const alphabetGroups: Record<string, typeof tags> = {};
+tags.forEach(tag => {
+  const firstLetter = tag.name[0].toUpperCase();
+  const group = /^[A-Z]/.test(firstLetter) ? firstLetter : '#';
+  if (!alphabetGroups[group]) alphabetGroups[group] = [];
+  alphabetGroups[group].push(tag);
+});
+
+const sortedGroups = Object.keys(alphabetGroups).sort();
+---
+
+<Layout
+  title="Tag Cloud Index"
+  description="Navigate the Elegant Automata knowledge base organically. Exploratory tag mesh of all classical studies, modular software designs, and DSP references."
+>
+  <section class="tags-index">
+    <div class="container">
+      <div class="breadcrumbs text-dim">
+        <a href="/canon">canon</a> / <span class="text-accent">tags</span>
+      </div>
+
+      <h1 class="section-title">
+        <span class="text-accent">▸</span> Tag Mesh Explorer
+      </h1>
+
+      <p class="tags-index__meta text-dim">
+        Tracking <span class="text-green">{tags.length}</span> unique tags over <span class="text-green">{data.files.length}</span> public nodes. Size denotes frequency.
+      </p>
+
+      <!-- Interactive / Visual Tag Cloud -->
+      <div class="terminal-window tag-cloud-window">
+        <div class="terminal-window__bar">
+          <div class="terminal-window__dots">
+            <span class="terminal-window__dot terminal-window__dot--red"></span>
+            <span class="terminal-window__dot terminal-window__dot--yellow"></span>
+            <span class="terminal-window__dot terminal-window__dot--green"></span>
+          </div>
+          curiosity-driven navigation (weighted tag mesh)
+        </div>
+        <div class="terminal-window__body tag-cloud-container">
+          {tags.map(tag => (
+            <a 
+              href={`/tags/${tag.name}`} 
+              class="tag-item"
+              style={`font-size: ${getTagSize(tag.count)};`}
+              title={`${tag.count} references`}
+            >
+              #{tag.name}<span class="tag-count">({tag.count})</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Structured Alphabetical List -->
+      <div class="tags-index__directory">
+        <h2 class="directory-title"><span class="text-accent">##</span> Alphabetical Directory</h2>
+        <div class="directory-grid">
+          {sortedGroups.map(group => (
+            <div class="directory-group">
+              <h3 class="group-letter text-green">{group}</h3>
+              <ul class="group-list">
+                {alphabetGroups[group].map(tag => (
+                  <li>
+                    <a href={`/tags/${tag.name}`} class="directory-link">
+                      #{tag.name} <span class="text-dim">({tag.count})</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+.tags-index {
+  padding: 4rem 0;
+}
+
+.breadcrumbs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-text-dim);
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tags-index__meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.tag-cloud-window {
+  margin-bottom: 4rem;
+}
+
+.tag-cloud-container {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.98);
+}
+
+.tag-item {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  transition: color 0.15s, text-shadow 0.15s;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.tag-item:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px rgba(77, 166, 255, 0.4);
+}
+
+.tag-count {
+  font-size: 0.65em;
+  color: var(--color-green);
+  margin-left: 2px;
+  vertical-align: super;
+}
+
+.tags-index__directory {
+  margin-top: 4rem;
+}
+
+.directory-title {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+}
+
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.directory-group {
+  margin-bottom: 1rem;
+}
+
+.group-letter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px dashed rgba(63, 185, 80, 0.2);
+  padding-bottom: 0.25rem;
+}
+
+.group-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.group-list li {
+  margin-bottom: 0.5rem;
+}
+
+.directory-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.directory-link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+</style>
