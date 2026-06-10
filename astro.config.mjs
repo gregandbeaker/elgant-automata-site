@@ -1,9 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://elegantautomata.ai',
+
   // Cloudflare Pages was trying to auto-provision an Astro SESSION KV namespace
   // even though this is a static site. Disable Astro sessions explicitly so
   // deploys do not attempt to create/recreate elegant-automata-site-session.
@@ -12,9 +15,11 @@ export default defineConfig({
       entrypoint: 'unstorage/drivers/null',
     },
   },
+
   build: {
     format: 'directory',
   },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -24,4 +29,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: cloudflare(),
 });
