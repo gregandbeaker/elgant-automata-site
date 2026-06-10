@@ -1,23 +1,174 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../sections/Hero.astro';
-import LiveBanner from '../sections/LiveBanner.astro';
-import WhatIsEA from '../sections/WhatIsEA.astro';
-import CoreComponents from '../sections/CoreComponents.astro';
-import ComposerDNA from '../sections/ComposerDNA.astro';
-import ProjectTracker from '../sections/ProjectTracker.astro';
-import Manifesto from '../sections/Manifesto.astro';
 ---
 
 <Layout
   title="Elegant Automata"
-  description="AI-led modular music engine. Real-time generative composition, style-aware groove engines, xenochronic metric phasing, and a local LLM that composes what no static sequence could."
+  description="Elegant Automata — Weld it. Code it. Scrutinize it. A rebellious garage manifesto for autonomous tools, creators, tinkerers, and rebels."
+  teaserOnly={true}
 >
-  <Hero />
-  <LiveBanner />
-  <WhatIsEA />
-  <CoreComponents />
-  <ProjectTracker />
-  <ComposerDNA />
-  <Manifesto />
+  <section class="teaser-page" aria-label="Elegant Automata teaser landing page">
+    <video
+      class="teaser-video"
+      src="/videos/ea_garage_manifesto.mp4"
+      poster="/images/ea_garage_manifesto_poster.png"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-label="Animated Elegant Automata garage manifesto teaser"
+    ></video>
+
+    <div class="teaser-fallback" aria-hidden="true">
+      <img src="/images/ea_garage_manifesto_poster.png" alt="" loading="eager" />
+    </div>
+
+    <div class="teaser-scrim" aria-hidden="true"></div>
+
+    <div class="teaser-copy">
+      <p class="eyebrow">./elegant-automata --garage-mode</p>
+      <h1>Elegant Automata</h1>
+      <p class="tagline">Weld it. Code it. Scrutinize it.</p>
+      <p class="subline">Real content is being soldered together. For now: no puppet strings, no corporate snoops.</p>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  :global(html),
+  :global(body) {
+    margin: 0;
+    min-height: 100%;
+    background: #050505;
+    overflow: hidden;
+  }
+
+  .teaser-page {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100svh;
+    overflow: hidden;
+    background: #050505;
+    display: grid;
+    place-items: center;
+  }
+
+  .teaser-video,
+  .teaser-fallback,
+  .teaser-fallback img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .teaser-video {
+    object-fit: cover;
+    z-index: 1;
+    filter: saturate(1.08) contrast(1.06) brightness(0.76);
+  }
+
+  .teaser-fallback {
+    z-index: 0;
+  }
+
+  .teaser-fallback img {
+    object-fit: cover;
+    filter: saturate(1.08) contrast(1.06) brightness(0.76);
+  }
+
+  .teaser-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 50% 45%, rgba(5, 5, 5, 0.08) 0%, rgba(5, 5, 5, 0.24) 42%, rgba(5, 5, 5, 0.78) 100%),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.04) 0px,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+    mix-blend-mode: normal;
+  }
+
+  .teaser-copy {
+    position: relative;
+    z-index: 3;
+    max-width: min(1080px, calc(100vw - 2rem));
+    padding: clamp(1rem, 3vw, 2.5rem);
+    text-align: center;
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, monospace;
+    color: #f5e8c7;
+    text-shadow: 0 2px 0 #050505, 0 0 24px rgba(0, 0, 0, 0.95);
+  }
+
+  .eyebrow {
+    color: #19f7ff;
+    font-size: clamp(0.72rem, 1.35vw, 1.05rem);
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+  }
+
+  h1 {
+    margin: 0;
+    color: #ffd23f;
+    font-size: clamp(3rem, 11vw, 9rem);
+    line-height: 0.86;
+    text-transform: uppercase;
+    letter-spacing: -0.08em;
+    font-weight: 900;
+    text-shadow:
+      5px 5px 0 #ff2a2a,
+      -3px -3px 0 #19f7ff,
+      0 0 36px rgba(0, 0, 0, 1);
+  }
+
+  .tagline {
+    margin: 1.1rem auto 0;
+    color: #ff2a2a;
+    font-size: clamp(1rem, 3.2vw, 2.35rem);
+    line-height: 1.1;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.045em;
+  }
+
+  .subline {
+    max-width: 760px;
+    margin: 1rem auto 0;
+    color: #f5e8c7;
+    font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+    line-height: 1.55;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .teaser-video,
+    .teaser-fallback img {
+      object-position: 42% center;
+      filter: saturate(1.08) contrast(1.08) brightness(0.55);
+    }
+
+    .teaser-copy {
+      align-self: end;
+      padding-bottom: 12svh;
+    }
+
+    h1 {
+      letter-spacing: -0.06em;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .teaser-video {
+      display: none;
+    }
+  }
+</style>

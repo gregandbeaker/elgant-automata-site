@@ -3,9 +3,10 @@
 interface Props {
   title: string;
   description?: string;
+  teaserOnly?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, teaserOnly = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -31,35 +32,39 @@ const { title, description } = Astro.props;
 <body>
   <div class="crt-overlay" aria-hidden="true"></div>
   
-  <header class="site-header">
-    <div class="container">
-      <a href="/" class="site-logo">
-        <span class="text-accent">▸</span> elegant_automata/
-      </a>
-      <nav class="site-nav">
-        <a href="/#what">what</a>
-        <a href="/#components">components</a>
-        <a href="/#tracker">tracker</a>
-        <a href="/canon">canon</a>
-        <a href="/tags">tags</a>
-        <a href="/diffs">diffs</a>
-      </nav>
-    </div>
-  </header>
+  {!teaserOnly && (
+    <header class="site-header">
+      <div class="container">
+        <a href="/" class="site-logo">
+          <span class="text-accent">▸</span> elegant_automata/
+        </a>
+        <nav class="site-nav">
+          <a href="/#what">what</a>
+          <a href="/#components">components</a>
+          <a href="/#tracker">tracker</a>
+          <a href="/canon">canon</a>
+          <a href="/tags">tags</a>
+          <a href="/diffs">diffs</a>
+        </nav>
+      </div>
+    </header>
+  )}
 
   <main>
     <slot />
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <hr class="section-divider">
-      <p class="text-dim" style="text-align: center; font-size: var(--font-size-sm);">
-        Elegant Automata · <span class="text-green">autos</span> + <span class="text-accent">matos</span> · Wire it up your damn self.<br>
-        Built in Joe's Garage. No puppet strings attached.
-      </p>
-    </div>
-  </footer>
+  {!teaserOnly && (
+    <footer class="site-footer">
+      <div class="container">
+        <hr class="section-divider">
+        <p class="text-dim" style="text-align: center; font-size: var(--font-size-sm);">
+          Elegant Automata · <span class="text-green">autos</span> + <span class="text-accent">matos</span> · Wire it up your damn self.<br>
+          Built in Joe's Garage. No puppet strings attached.
+        </p>
+      </div>
+    </footer>
+  )}
 
   <style>
     .site-header {
