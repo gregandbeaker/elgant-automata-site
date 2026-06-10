@@ -28,12 +28,12 @@
       "is_index": false
     },
     {
-      "path": "00_META/DAILY_DIFFS/diff - 6-10-2026.md",
+      "path": "00_META/DAILY_DIFFS/diff - 06-10-2026.md",
       "title": "Untitled",
       "section": "00_META",
-      "size_bytes": 206,
-      "modified": "2026-06-10T09:54:11.169Z",
-      "word_count": 35,
+      "size_bytes": 715,
+      "modified": "2026-06-10T14:42:12.674Z",
+      "word_count": 129,
       "excerpt": "",
       "tags": [
         "meta"
@@ -908,9 +908,9 @@
       "title": "🟢 Boards of Canada — Master Research Hub & Discography",
       "subtitle": "🏗️ 1. Executive Summary `[LLM]`",
       "section": "04_MUSIC_STUDIES",
-      "size_bytes": 6097,
-      "modified": "2026-06-09T22:19:29.011Z",
-      "word_count": 895,
+      "size_bytes": 6114,
+      "modified": "2026-06-10T12:15:17.193Z",
+      "word_count": 901,
       "excerpt": "An Analytical Exploration of the Sonic Architecture, Hauntology, and Production Mythology of Michael Sandison & Marcus Eoin Boards of Canada (BoC) are a Scottish electronic music duo consisting of bro",
       "tags": [
         "music-studies",
@@ -998,6 +998,34 @@
         "stravinsky",
         "polyrhythm",
         "fff"
+      ],
+      "is_index": false
+    },
+    {
+      "path": "04_MUSIC_STUDIES/zappa.md",
+      "title": "🎸 Composer Profile: Frank Zappa",
+      "subtitle": "Architect of Sonic Anomalies and Conceptual Continuity",
+      "section": "04_MUSIC_STUDIES",
+      "size_bytes": 17550,
+      "modified": "2026-06-10T12:37:02.227Z",
+      "word_count": 2284,
+      "excerpt": "Key point: Frank Zappa (1940-1993) was a fiercely independent American composer, bandleader, and social satirist, whose prolific output spanned rock, jazz, classical, and electronic music. He is celeb",
+      "tags": [
+        "music-studies",
+        "composers",
+        "zappa",
+        "modern",
+        "electronic",
+        "fusion",
+        "reference",
+        "f9f",
+        "ccf",
+        "ffa",
+        "aef",
+        "afa",
+        "fca",
+        "eef",
+        "ddf"
       ],
       "is_index": false
     },
@@ -1137,9 +1165,9 @@
       "title": "🎸 Technical Composers Analysis: Prince",
       "subtitle": "An Analytical Breakdown of the Linn LM-1 as Compositional Tool, Oberheim Synthesizer Layering, Bass-Subtraction as Sonic Architecture, and the Birth of the Minneapolis Sound",
       "section": "05_Jazz_&_Fusion",
-      "size_bytes": 23978,
-      "modified": "2026-06-09T20:34:23.495Z",
-      "word_count": 3156,
+      "size_bytes": 27876,
+      "modified": "2026-06-10T12:43:09.017Z",
+      "word_count": 3714,
       "excerpt": "Prince didn't just *use* the Linn LM-1 Drum Computer — he transformed it from a drummer replacement into a compositional engine. Where other artists selected stock patterns, Prince treated the LM-1 as",
       "tags": [
         "jazz",
@@ -1172,8 +1200,8 @@
       "is_index": false
     }
   ],
-  "total_files": 67,
-  "total_words": 80846,
+  "total_files": 68,
+  "total_words": 83788,
   "sections": [
     "00_META",
     "01_DSP_&_Audio_Physics",
@@ -1182,6 +1210,6 @@
     "05_Jazz_&_Fusion",
     "06_Guitar_Solos_&_Xenochrony"
   ],
-  "extracted_at": "2026-06-10T10:47:08.381Z",
+  "extracted_at": "2026-06-10T16:52:16.945Z",
   "vault_path": "/Users/gregevans/workspace/ElegantAutomata/obsidian-vault"
 }
